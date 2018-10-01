@@ -4,7 +4,9 @@
   "description": "Projet numéro 3 \"Réseau social culture pop\"",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "path": "^0.12.7",
+    "pug": "^2.0.3"
   },
   "devDependencies": {},
   "scripts": {
