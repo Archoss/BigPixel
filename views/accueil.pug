@@ -4,36 +4,12 @@
 extends layout
 
 block content
-   h1 Bienvenue sur BigPixel
-   form.signUp(action="#", method="post")
-      .row
-         .col-6.col-sm-4
-            .input-group.input-group-lg
-               span#inputGroup-sizing-lg.input-group-text Pseudo 
-               input(type="text", aria-label="Large", aria-describedby="inputGroup-sizing-sm" placeholder="Saisissez un pseudo")
-         .col-6.col-sm-4
-            .input-group.input-group-lg
-               span#inputGroup-sizing-lg.input-group-text Password 
-               input(type="text", aria-label="Large", aria-describedby="inputGroup-sizing-sm" placeholder="Saisissez un pseudo")
-      .row   
-         .col-6.col-sm-4
-            .input-group.input-group-lg
-               span#inputGroup-sizing-lg.input-group-text Email 
-               input(type="text", aria-label="Large", aria-describedby="inputGroup-sizing-sm" placeholder="Saisissez un pseudo")
-      .row   
-         .col-6.col-sm-4
-            .input-group.input-group-lg
-               span#inputGroup-sizing-lg.input-group-text Votre jeu favoris 
-               input(type="text", aria-label="Large", aria-describedby="inputGroup-sizing-sm" placeholder="Saisissez votre jeu favoris")
-         .col-6.col-sm-4
-            .input-group.input-group-lg
-               span#inputGroup-sizing-lg.input-group-text Votre film favoris 
-               input(type="text", aria-label="Large", aria-describedby="inputGroup-sizing-sm" placeholder="Saisissez votre film favoris")
-      .row   
-         .input-group-prepend
-            button.btn.btn-outline-dark.btn-lg(type='button') Valider
+	.container
+		article.home
+			h1 BigPixel
+			h3 Le réseau social pour les gameurs dans l'âme et plus si affinités ...
 
-   script.
-      document.addEventListener("DOMContentLoaded", function(e) {
-         console.log("Document entièrement chargé");
-      })
+	script.
+		document.addEventListener("DOMContentLoaded", function(e) {
+			console.log("Document entièrement chargé");
+		})

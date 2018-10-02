@@ -1,74 +1,116 @@
 * {
-   font-family: 'Rosario', sans-serif;
+	font-family: "Rosario", sans-serif;
+	/* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
-html {
-   /* background: url("../images/fond-d-ecran-hd-sombre.jpg"); */
-   /* background-repeat: no-repeat; */
-   /* background-size: cover; */
-   width: 100%;
+body {
+	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	/* background: #c5c5c5; */
 }
 
-.nav {
-   background: linear-gradient(180deg, #5f5f5f, rgb(26, 26, 26), #5f5f5f);
-   padding: 10px;
-   padding-left: 0;
-   margin-bottom: 0;
-   list-style: none;
+article {
+	background: linear-gradient(
+		90deg,
+		#bdbdbd00,
+		#dadadabb,
+		#ffffffc7,
+		#dadadabb,
+		#bdbdbd00
+	);
+	/* background-color: #bdbdbdbb; */
+	padding: 5% 20%;
+	margin: 3% 5%;
+	text-align: center;
+}
+article h1 {
+	padding: 4%;
+	font-weight: bold;
+	font-size: 2.5rem;
+	color: rgb(0, 0, 0);
+}
+article h3 {
+	padding: 2%;
+	color: rgb(41, 41, 41);
+}
 
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-   font-size: 1.4rem;
-   font-weight: bold;
-   box-shadow: 0px 0px 10px 2px rgba(58, 58, 58, 0.88);
+nav {
+	background: linear-gradient(180deg, #d6d6d6, #8d8d8d, #424242);
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+
+	font-size: 1.4rem;
+	font-weight: bold;
+	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
+}
+
+.nav-brand {
+	font-weight: bold;
+}
+
+nav ul {
+	margin-left: 3%;
 }
 
 .nav li .nav-link:focus,
 .nav li .nav-link:hover {
-   text-decoration: none;
-   background-color: #ffffff6b;
+	text-decoration: none;
+	color: #3d3d3d;
 }
 
 .nav li .nav-link {
-   color: white;
-   letter-spacing: 2px;
-}
-
-.nav-pills .nav-item {
-   float: right;
+	color: white;
+	letter-spacing: 2px;
 }
 
 .signUp {
-   width: 38%;
-   background-color: #8080808a;
-   border-radius: 4px;
-   padding: 1%;
+	background: linear-gradient(
+		90deg,
+		#00000000,
+		#808080be,
+		#808080be,
+		#00000000
+	);
+	border-radius: 5px;
+	padding: 1%;
+	margin: 3% auto;
 }
 
 .signUp label {
-   padding: 5px;
-   margin: 1%;
-   color: rgb(255, 255, 255);
+	font-size: 1.1rem;
+	color: rgb(255, 255, 255);
 }
-
 .signUp input {
-   width: 200px;
-   padding: 5px;
+	letter-spacing: 1px;
+	text-align: center;
+	color: rgb(255, 255, 255);
+	box-shadow: inset #00000082 2px 2px 13px 3px;
+	border: 1px solid #444444;
+}
+.signUp input:focus {
+	transition: 1s all;
+	box-shadow: inset grey 0 0 0;
 }
 
 .signUp button {
-   background: linear-gradient(180deg, #c7c6c6, #e6e6e6);
-   margin: 2%;
-   width: 120px;
-   font-size: 1.6rem;
-   font-weight: bold;
-   color: rgb(51, 51, 51);
-}
+	font-size: 1.6rem;
+	font-weight: bold;
+	color: rgb(71, 71, 71);
 
+	margin: 1% 40%;
+	width: 14rem;
+	text-align: center;
+}
 .signUp button:hover {
-   background: linear-gradient(180deg, #d4d4d4, #959595);
-   color: rgb(51, 51, 51);
+	background-color: #bebebe;
 }
 
-.row {
-   margin: 5px;
+.red {
+	color: red;
+	font-weight: bolder;
+	font-size: 1.5rem;
+	line-height: 0;
 }

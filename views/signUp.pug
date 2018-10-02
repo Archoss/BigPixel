@@ -1,0 +1,39 @@
+//- #####################
+//- //   Inscription   //
+//- #####################
+extends layout
+
+block content
+	form.signUp(action="#" method="post")
+		.container
+			.form-row
+				.form-group.col-md-6
+					label(for='pseudo') Pseudo 
+						span.red *
+					input#pseudo.form-control(type='pseudo', placeholder='Saisissez un pseudo' name="pseudo" required)
+				.form-group.col-md-6
+					label(for='email') Email 
+						span.red *
+					input#email.form-control(type='email', placeholder='Saisissez un email' name="email" required)
+			.form-row.align-items-center
+				.form-group.col-md-6
+					label(for='password') Password 
+						span.red *
+					input#password.form-control(type='password', placeholder='Saisissez un password' name="password" required)
+				.form-group.col-md-6
+					label(for='city') City
+					input#city.form-control(type='text' placeholder='Saisissez une ville' name="city")
+			.form-row.align-items-center
+				.form-group.col-md-6
+					label(for='movie') Film préféré
+					input#movie.form-control(type='text' placeholder='Saisissez un film' name="movie")
+				.form-group.col-md-6
+					label(for='game') Jeu préféré
+					input#game.form-control(type='text' placeholder='Saisissez un jeu' name="game")
+			button.btn.btn(type='submit') Sign in
+			
+	script.
+		$('document').ready(function() {
+			console.log( "ready!" );
+			$()
+		});

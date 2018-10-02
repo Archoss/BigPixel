@@ -5,13 +5,14 @@ html(lang="fr")
   head
     block head
       meta(charset="UTF-8")
-      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
       meta(http-equiv="X-UA-Compatible", content="ie=edge")
       title BigPixel
       link(rel="stylesheet", href="stylesheets/style.css")
+      script(src='/jquery/jquery.min.js')
       <link href="https://fonts.googleapis.com/css?family=Rosario" rel="stylesheet">
       //- <!-- Bootstrap CSS -->
-      link(rel="stylesheet"  href='/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css')
+      link(rel="stylesheet"  href='/bootstrap/css/bootstrap.min.css')
   body
     include includes/navBar.pug
     block content
