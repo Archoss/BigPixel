@@ -8,47 +8,78 @@ body {
 	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 	/* background: #c5c5c5; */
 }
 
-article {
-	background: linear-gradient(
-		90deg,
-		#bdbdbd00,
-		#dadadabb,
-		#ffffffc7,
-		#dadadabb,
-		#bdbdbd00
-	);
-	/* background-color: #bdbdbdbb; */
-	padding: 5% 20%;
-	margin: 3% 5%;
+
+.home {
 	text-align: center;
 }
+
 article h1 {
-	padding: 4%;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.699);
+	text-align: center;
+	padding: 0% 5% 5% 5%;
 	font-weight: bold;
 	font-size: 2.5rem;
-	color: rgb(0, 0, 0);
+	color: rgb(70, 70, 70);
 }
+
 article h3 {
 	padding: 2%;
 	color: rgb(41, 41, 41);
 }
 
+article {
+	/* background: linear-gradient(90deg,
+		#bdbdbd00,
+		#dadadabb,
+		#ffffffc7,
+		#dadadabb,
+		#bdbdbd00); */
+	background-color: #ffffffea;
+	border-radius: 15px;
+	padding: 5% 20%;
+	margin: 3% 5%;
+}
+
+article .description {
+	font-size: 1.3rem;
+	margin: auto;
+}
+
+.description p {}
+
+.description p span:first-of-type {
+	width: 200px;
+	display: inline-block;
+}
+
+.description p span:last-of-type {
+	display: inline-block;
+	float: right;
+}
+
 nav {
 	background: linear-gradient(180deg, #d6d6d6, #8d8d8d, #424242);
+	overflow: hidden;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	height: 8%;
 	padding-left: 0;
 	margin-bottom: 0;
 	list-style: none;
 
-	font-size: 1.4rem;
-	font-weight: bold;
+	font-size: 1.2rem;
 	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
 }
 
-.nav-brand {
-	font-weight: bold;
+.navbar-brand {
+	font-size: 1.5rem;
+	font-weight: bolder;
 }
 
 nav ul {
@@ -66,46 +97,60 @@ nav ul {
 	letter-spacing: 2px;
 }
 
-.signUp {
-	background: linear-gradient(
-		90deg,
+.subscribe {
+	/* background: linear-gradient(90deg,
 		#00000000,
-		#808080be,
-		#808080be,
-		#00000000
-	);
+		#808080a4,
+		#808080a4,
+		#00000000);
 	border-radius: 5px;
 	padding: 1%;
+	height: fit-content; */
 	margin: 3% auto;
 }
 
-.signUp label {
+.subscribe label {
 	font-size: 1.1rem;
 	color: rgb(255, 255, 255);
 }
-.signUp input {
+
+.subscribe input[type=text],
+.subscribe input[type=email],
+.subscribe input[type=password],
+textarea {
+	background: rgb(233, 233, 233);
 	letter-spacing: 1px;
 	text-align: center;
-	color: rgb(255, 255, 255);
-	box-shadow: inset #00000082 2px 2px 13px 3px;
+	color: rgb(66, 66, 66);
+	box-shadow: inset #00000091 0px 0px 15px 1px;
 	border: 1px solid #444444;
 }
-.signUp input:focus {
+
+.subscribe input:focus {
+	background: rgb(255, 255, 255);
 	transition: 1s all;
 	box-shadow: inset grey 0 0 0;
 }
 
-.signUp button {
+.subscribe button {
+	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
+	box-shadow: inset 0px 20px 20px 5px rgb(138, 138, 138);
 	font-size: 1.6rem;
 	font-weight: bold;
-	color: rgb(71, 71, 71);
+	color: #181818;
 
-	margin: 1% 40%;
+	margin: 3% 40%;
 	width: 14rem;
 	text-align: center;
 }
-.signUp button:hover {
-	background-color: #bebebe;
+
+.subscribe button:focus {
+	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
+	box-shadow: 0 0 0 0 black;
+}
+
+.subscribe button:hover {
+	box-shadow: 0 0 0 0 black;
 }
 
 .red {
@@ -113,4 +158,53 @@ nav ul {
 	font-weight: bolder;
 	font-size: 1.5rem;
 	line-height: 0;
+}
+
+.form-check-label p {
+	padding: 10px;
+}
+
+.form-check-label {
+	text-align: center;
+	height: 5%;
+}
+
+input:checked {
+	border: 10px dashed #ff0000;
+}
+
+.formCheckBoxs {
+	margin-left: 35%;
+}
+
+.margin {
+	margin-bottom: 40px;
+}
+
+input[type='radio']:after {
+	transition: 0.5s all;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-bottom: 1%;
+	position: relative;
+	background-color: #d1d3d1;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 10px solid white;
+}
+
+input[type='radio']:checked:after {
+	transition: 0.5s all;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	margin-bottom: 1%;
+	position: relative;
+	background-color: #ff9100;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
 }

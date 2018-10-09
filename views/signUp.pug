@@ -4,36 +4,95 @@
 extends layout
 
 block content
-	form.signUp(action="#" method="post")
+	form.subscribe(action="/signUp" method="POST")
 		.container
-			.form-row
+			.form-row.align-items-center.margin
+				-//############   GENRE   ############ 
+				.form-check.col-md-2.formCheckBoxs
+					label.container.form-check-label(for='exampleRadios1')
+						input#exampleRadios1(type='radio', name='exampleRadios', value='option1')
+						p Homme
+				.form-check.col-md-2
+					label.container.form-check-label(for='exampleRadios2')
+						input#exampleRadios2(type='radio', name='exampleRadios', value='option2')
+						p Femme
+			.form-row.align-items-center
+				-//############   PSEUDO   ############ 
 				.form-group.col-md-6
 					label(for='pseudo') Pseudo 
 						span.red *
-					input#pseudo.form-control(type='pseudo', placeholder='Saisissez un pseudo' name="pseudo" required)
+					input#pseudo.form-control(type='text', placeholder='Saisissez un pseudo' name="pseudo" required)
+				-//############   PASSWORD   ############ 
+				.form-group.col-md-6
+					label(for='password') Mot de passe 
+						span.red *
+					input#password.form-control(type='password', placeholder='Saisissez un mot de passe' name="password" required)
+				-//############   NOM   ############ 
+				.form-group.col-md-6
+					label(for='lastname') Nom 
+						span.red *
+					input#lastname.form-control(type='text', placeholder='Saisissez un nom' name="lastname" required)
+				-//############   PRENOM   ############ 
+				.form-group.col-md-6
+					label(for='firstname') Prénom 
+						span.red *
+					input#firstname.form-control(type='text', placeholder='Saisissez un prénom' name="firstname" required)
+			.form-row.align-items-center
+				-//############   AGE   ############ 
+				.form-group.col-md-6
+					label(for='age') Age 
+						span.red *
+					input#age.form-control(type='text', placeholder='Saisissez un age' name="age" required)
+				-//############   COORDONNEES   ############ 
+				.form-group.col-md-6
+					label(for='adress') Coordoonnées 
+					input#adress.form-control(type='text', placeholder='Saisissez une adresse' name="adress" required)
+				-//############   EMAIL   ############ 
 				.form-group.col-md-6
 					label(for='email') Email 
 						span.red *
 					input#email.form-control(type='email', placeholder='Saisissez un email' name="email" required)
-			.form-row.align-items-center
-				.form-group.col-md-6
-					label(for='password') Password 
-						span.red *
-					input#password.form-control(type='password', placeholder='Saisissez un password' name="password" required)
+				-//############   CITY   ############ 
 				.form-group.col-md-6
 					label(for='city') City
 					input#city.form-control(type='text' placeholder='Saisissez une ville' name="city")
 			.form-row.align-items-center
+				-//############   FILM   ############ 
 				.form-group.col-md-6
 					label(for='movie') Film préféré
 					input#movie.form-control(type='text' placeholder='Saisissez un film' name="movie")
+				-//############   JEU   ############ 
 				.form-group.col-md-6
 					label(for='game') Jeu préféré
 					input#game.form-control(type='text' placeholder='Saisissez un jeu' name="game")
-			button.btn.btn(type='submit') Sign in
+				-//############   PRESENTATION   ############ 
+				.form-group.col-md-6
+					label(for='presentation') Présentation
+					textarea.form-control(placeholder='Présentez-vous' name="presentation")
+			button.btn.btn(type='submit') Envoyer
 			
 	script.
 		$('document').ready(function() {
 			console.log( "ready!" );
-			$()
+			$("#pseudo").focusout(function() {
+				if($("#pseudo")) {
+					console.log($("#pseudo").val());
+				}
+			})
+			$("#email").focusout(function() {
+				if($("#email")) {
+					console.log($("#email").val());
+				}
+			})
+			$("#password").focusout(function() {
+				if($("#password")) {
+					console.log($("#password").val());
+				}
+			})
+			$("#email").focusout(function() {
+				if($("#email")) {
+					console.log($("#pseudo").val());
+				}
+			})
+			$("#pseudo").val();
 		});

@@ -1,0 +1,40 @@
+extends layout
+
+block content  
+   .container
+      article.profile
+         h1 Profile
+         .description
+            p 
+               span Pseudo : 
+               span #{user.pseudo}
+            p 
+               span Email : 
+               span #{user.email}
+            p 
+               span Password : 
+               span #{user.password}
+            p 
+               span Nom : 
+               span #{user.lastname}
+            p 
+               span Prénom : 
+               span #{user.firstname}
+            p 
+               span Age : 
+               span #{user.age}
+            p 
+               span Coordonnées : 
+               span #{user.adress}
+            p 
+               span Ville : 
+               span #{user.city}
+            p 
+               span Film préféré :
+               span #{user.movie}
+            p 
+               span Jeu préféré :
+               span #{user.game}
+            p 
+               span Présentation : 
+               span #{user.presentation}
