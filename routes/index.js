@@ -9,27 +9,27 @@ router.get('/', function (req, res, next) {
   })
   .post('/signUp', function (req, res, next) {
     console.log(req.body)
-    var pseudo = req.body.pseudo.trim();
-    var email = req.body.email;
-    var password = req.body.password;
-    var lastname = req.body.lastname.trim();
-    var firstname = req.body.firstname.trim();
-    var age = req.body.age;
-    var adress = req.body.adress.trim();
-    var city = req.body.city.trim();
-    var movie = req.body.movie.trim();
-    var game = req.body.game.trim();
-    var presentation = req.body.presentation;
-    console.log("req.body.pseudo --> " + req.body.pseudo)
-    console.log("req.body.email --> " + req.body.email)
+    let user = {
+      pseudo: req.body.pseudo.trim(),
+      email: req.body.email,
+      password: req.body.password,
+      lastname: req.body.lastname.trim(),
+      firstname: req.body.firstname.trim(),
+      age: req.body.age,
+      adress: req.body.adress.trim(),
+      city: req.body.city.trim(),
+      movie: req.body.movie.trim(),
+      game: req.body.game.trim(),
+      presentation: req.body.presentation,
+    }
     // /---/  MONGO  /---/ //
     req.db.collection('utilisateurs').findOne({
       pseudo: {
-        $regex: pseudo,
+        $regex: user.pseudo,
         $options: "is"
       },
       email: {
-        $regex: email,
+        $regex: user.email,
         $options: "is"
       },
     }, function (err, result) {
@@ -40,38 +40,14 @@ router.get('/', function (req, res, next) {
         })
       } else {
         req.db.collection('utilisateurs').insertOne({
-            pseudo: pseudo,
-            email: email,
-            password: password,
-            lastname: lastname,
-            firstname: firstname,
-            age: age,
-            adress: adress,
-            city: city,
-            movie: movie,
-            game: movie,
-            presentation: presentation,
+            user
           },
           err => {
             if (err) {
               throw err;
             } else {
-              let user = {
-                pseudo: pseudo,
-                email: email,
-                password: password,
-                lastname: lastname,
-                firstname: firstname,
-                age: age,
-                adress: adress,
-                city: city,
-                movie: movie,
-                game: game,
-                presentation: presentation,
-              }
               req.session.user = user
               res.redirect("/profile");
-              console.log(req.body)
             }
           })
       }

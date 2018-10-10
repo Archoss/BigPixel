@@ -5,7 +5,7 @@
 }
 
 body {
-	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
+	/* background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg"); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -18,6 +18,11 @@ body {
 	text-align: center;
 }
 
+/* 
+.about {
+	padding: 20%;
+} */
+
 article h1 {
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.699);
 	text-align: center;
@@ -27,8 +32,9 @@ article h1 {
 	color: rgb(70, 70, 70);
 }
 
-article h3 {
+article p {
 	padding: 2%;
+	font-size: 1.5rem;
 	color: rgb(41, 41, 41);
 }
 
@@ -39,7 +45,6 @@ article {
 		#ffffffc7,
 		#dadadabb,
 		#bdbdbd00); */
-	background-color: #ffffffea;
 	border-radius: 15px;
 	padding: 5% 20%;
 	margin: 3% 5%;
@@ -63,18 +68,18 @@ article .description {
 }
 
 nav {
-	background: linear-gradient(180deg, #d6d6d6, #8d8d8d, #424242);
-	overflow: hidden;
-	top: 0;
-	position: fixed;
+	background-color: #ffac53;
 	width: 100%;
-	height: 8%;
-	padding-left: 0;
-	margin-bottom: 0;
+	height: 2.8rem;
+	border: none;
 	list-style: none;
 
 	font-size: 1.2rem;
 	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
+}
+
+.nav-link {
+	color: rgb(32, 32, 32);
 }
 
 .navbar-brand {
@@ -86,15 +91,19 @@ nav ul {
 	margin-left: 3%;
 }
 
-.nav li .nav-link:focus,
-.nav li .nav-link:hover {
+.nav-link:focus,
+.nav-link:hover {
+	transition: all 0.25s;
 	text-decoration: none;
-	color: #3d3d3d;
+	background: #3f3f3f;
+	color: #fcab55;
+	font-weight: bold;
 }
 
-.nav li .nav-link {
-	color: white;
-	letter-spacing: 2px;
+.nav-link:not(:hover) {
+	transition: all 0.25s;
+	background: none;
+	font-weight: normal;
 }
 
 .subscribe {
@@ -102,28 +111,33 @@ nav ul {
 		#00000000,
 		#808080a4,
 		#808080a4,
-		#00000000);
+		#00000000); */
 	border-radius: 5px;
-	padding: 1%;
-	height: fit-content; */
+	padding: 2%;
 	margin: 3% auto;
 }
 
 .subscribe label {
+	margin: 1%;
 	font-size: 1.1rem;
-	color: rgb(255, 255, 255);
 }
 
 .subscribe input[type=text],
 .subscribe input[type=email],
-.subscribe input[type=password],
-textarea {
-	background: rgb(233, 233, 233);
+.subscribe input[type=password] {
 	letter-spacing: 1px;
 	text-align: center;
 	color: rgb(66, 66, 66);
-	box-shadow: inset #00000091 0px 0px 15px 1px;
-	border: 1px solid #444444;
+	border: none;
+	border-radius: 0px;
+	border-bottom: rgb(155, 155, 155) solid 1px;
+}
+
+.subscribe textarea {
+	text-align: center;
+	letter-spacing: 1px;
+	border-radius: 0px;
+
 }
 
 .subscribe input:focus {
@@ -133,11 +147,11 @@ textarea {
 }
 
 .subscribe button {
-	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
-	box-shadow: inset 0px 20px 20px 5px rgb(138, 138, 138);
-	font-size: 1.6rem;
+	background: linear-gradient(180deg, #b9b9b9, #909090);
+	border: none;
+	font-size: 1.5rem;
 	font-weight: bold;
-	color: #181818;
+	color: #474747;
 
 	margin: 3% 40%;
 	width: 14rem;
@@ -150,6 +164,7 @@ textarea {
 }
 
 .subscribe button:hover {
+	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
 	box-shadow: 0 0 0 0 black;
 }
 
@@ -165,12 +180,9 @@ textarea {
 }
 
 .form-check-label {
+	cursor: pointer;
 	text-align: center;
 	height: 5%;
-}
-
-input:checked {
-	border: 10px dashed #ff0000;
 }
 
 .formCheckBoxs {
@@ -182,17 +194,17 @@ input:checked {
 }
 
 input[type='radio']:after {
+	cursor: pointer;
 	transition: 0.5s all;
 	width: 20px;
 	height: 20px;
-	border-radius: 10px;
 	margin-bottom: 1%;
 	position: relative;
-	background-color: #d1d3d1;
+	background-color: #ffffff;
 	content: '';
 	display: inline-block;
 	visibility: visible;
-	border: 10px solid white;
+	border: 2px solid rgb(179, 178, 178);
 }
 
 input[type='radio']:checked:after {
@@ -203,7 +215,6 @@ input[type='radio']:checked:after {
 	margin-bottom: 1%;
 	position: relative;
 	background-color: #ff9100;
-	content: '';
 	display: inline-block;
 	visibility: visible;
 	border: 2px solid white;
