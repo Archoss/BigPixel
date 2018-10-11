@@ -4,20 +4,32 @@
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
-body {
-	/* background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg"); */
+.fond {
+	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -3;
+	width: 100%;
+	height: 100%;
+	filter: blur(3px);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
 	background-attachment: fixed;
 	/* background: #c5c5c5; */
 }
-
+footer {
+	text-align: center;
+	color: rgb(212, 212, 212);
+}
 
 .home {
 	text-align: center;
 }
-
+.about {
+	color: white;
+}
 /* 
 .about {
 	padding: 20%;
@@ -29,22 +41,22 @@ article h1 {
 	padding: 0% 5% 5% 5%;
 	font-weight: bold;
 	font-size: 2.5rem;
-	color: rgb(70, 70, 70);
+	color: rgb(255, 255, 255);
 }
 
 article p {
-	padding: 2%;
+	/* padding: 2%; */
 	font-size: 1.5rem;
-	color: rgb(41, 41, 41);
+	color: rgb(255, 255, 255);
 }
 
 article {
 	/* background: linear-gradient(90deg,
-		#bdbdbd00,
-		#dadadabb,
-		#ffffffc7,
-		#dadadabb,
-		#bdbdbd00); */
+	#bdbdbd00,
+	#dadadabb,
+	#ffffffc7,
+	#dadadabb,
+	#bdbdbd00); */
 	border-radius: 15px;
 	padding: 5% 20%;
 	margin: 3% 5%;
@@ -55,10 +67,12 @@ article .description {
 	margin: auto;
 }
 
-.description p {}
+.description p {
+	color: rgb(255, 255, 255);
+}
 
 .description p span:first-of-type {
-	width: 200px;
+	width: 150px;
 	display: inline-block;
 }
 
@@ -68,7 +82,7 @@ article .description {
 }
 
 nav {
-	background-color: #ffac53;
+	background-color: #56adff;
 	width: 100%;
 	height: 2.8rem;
 	border: none;
@@ -78,8 +92,30 @@ nav {
 	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
 }
 
+nav form {
+	margin: 0 0 0 10px;
+}
+
+nav form .searchInput {
+	height: 1.8rem;
+	border-radius: 20px;
+	border: none;
+}
+
+nav form .search {
+	width: auto;
+	height: 1.3rem;
+}
+
+nav form button:hover {
+	background-color: rgba(255, 255, 255, 0.418);
+}
+nav form button {
+	background-color: rgba(0, 0, 0, 0);
+}
+
 .nav-link {
-	color: rgb(32, 32, 32);
+	color: #202020;
 }
 
 .navbar-brand {
@@ -95,8 +131,8 @@ nav ul {
 .nav-link:hover {
 	transition: all 0.25s;
 	text-decoration: none;
-	background: #3f3f3f;
-	color: #fcab55;
+	background: #1d1d1d;
+	color: #56adff;
 	font-weight: bold;
 }
 
@@ -106,7 +142,9 @@ nav ul {
 	font-weight: normal;
 }
 
-.subscribe {
+.subscribe,
+.signIn {
+	color: rgb(255, 255, 255);
 	/* background: linear-gradient(90deg,
 		#00000000,
 		#808080a4,
@@ -117,36 +155,41 @@ nav ul {
 	margin: 3% auto;
 }
 
-.subscribe label {
+.subscribe label,
+.signIn label {
 	margin: 1%;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 }
 
-.subscribe input[type=text],
-.subscribe input[type=email],
-.subscribe input[type=password] {
+.subscribe input[type="text"],
+.subscribe input[type="email"],
+.subscribe input[type="password"],
+.signIn input[type="text"],
+.signIn input[type="email"],
+.signIn input[type="password"] {
+	background: rgba(255, 255, 255, 0.719);
 	letter-spacing: 1px;
-	text-align: center;
-	color: rgb(66, 66, 66);
+	color: rgb(255, 255, 255);
 	border: none;
-	border-radius: 0px;
+	border-radius: 6px;
 	border-bottom: rgb(155, 155, 155) solid 1px;
 }
 
 .subscribe textarea {
-	text-align: center;
+	background: rgba(255, 255, 255, 0.719);
 	letter-spacing: 1px;
-	border-radius: 0px;
-
+	border-radius: 6px;
 }
 
-.subscribe input:focus {
+.subscribe input:focus,
+.signIn input:focus {
 	background: rgb(255, 255, 255);
 	transition: 1s all;
 	box-shadow: inset grey 0 0 0;
 }
 
-.subscribe button {
+.subscribe button,
+.signIn button {
 	background: linear-gradient(180deg, #b9b9b9, #909090);
 	border: none;
 	font-size: 1.5rem;
@@ -158,13 +201,15 @@ nav ul {
 	text-align: center;
 }
 
-.subscribe button:focus {
-	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
+.subscribe button:focus,
+.signIn button:focus {
+	background: linear-gradient(180deg, #e4e3e3, #8d8d8d);
 	box-shadow: 0 0 0 0 black;
 }
 
-.subscribe button:hover {
-	background: linear-gradient(180deg, #d6d6d6, #8d8d8d);
+.subscribe button:hover,
+.signIn button:hover {
+	background: linear-gradient(180deg, #e4e3e3, #8d8d8d);
 	box-shadow: 0 0 0 0 black;
 }
 
@@ -193,7 +238,7 @@ nav ul {
 	margin-bottom: 40px;
 }
 
-input[type='radio']:after {
+input[type="radio"]:after {
 	cursor: pointer;
 	transition: 0.5s all;
 	width: 20px;
@@ -201,21 +246,20 @@ input[type='radio']:after {
 	margin-bottom: 1%;
 	position: relative;
 	background-color: #ffffff;
-	content: '';
+	content: "";
 	display: inline-block;
 	visibility: visible;
-	border: 2px solid rgb(179, 178, 178);
+	border: 0px inset rgb(179, 178, 178);
 }
 
-input[type='radio']:checked:after {
+input[type="radio"]:checked:after {
 	transition: 0.5s all;
 	width: 20px;
 	height: 20px;
-	border-radius: 2px;
+	border-radius: 5px;
 	margin-bottom: 1%;
 	position: relative;
 	background-color: #ff9100;
 	display: inline-block;
 	visibility: visible;
-	border: 2px solid white;
 }

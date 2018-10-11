@@ -1,13 +1,14 @@
 extends layout
 
 block content  
-   .container
+   .container-fluid
       article.profile
          h1 Profile
          .description
             p 
                span Pseudo : 
-               span #{user.pseudo}
+               span #{user.pseudo} 
+               a(href="#") Modifier   
             p 
                span Email : 
                span #{user.email}

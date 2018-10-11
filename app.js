@@ -8,14 +8,13 @@ const server = require("http").Server(app);
 const expressMongoDb = require("express-mongo-db");
 const MongoStore = require("connect-mongo")(session);
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+var indexRouter = require("./routes/index");
+var usersRouter = require("./routes/users");
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-app.set('trust proxy', 1) // trust first proxy
+app.set("trust proxy", 1); // trust first proxy
 app.locals.pretty = true;
 
 app.use(expressMongoDb("mongodb://127.0.0.1:27017/bigPixel_db"));
@@ -26,11 +25,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, "public")));
-app.use(
-    "/bootstrap",
-    express.static(__dirname + "/node_modules/bootstrap/dist/")
-);
+app.use("/static", express.static(path.join(__dirname, "public")));
+app.use("/bootstrap", express.static(__dirname + "/node_modules/bootstrap/dist/"));
 app.use("/jquery", express.static(__dirname + "/node_modules/jquery/dist/"));
 
 app.use(
@@ -47,8 +43,8 @@ app.use(
         })
     })
 );
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
 
 app.get("/", function (req, res) {
     res.render("accueil", {
@@ -73,6 +69,12 @@ app.get("/profile", function (req, res) {
         titre: "BigPixel",
         user: user
     });
+});
+
+app.get("/404", function (req, res, next) {
+    res.status(404);
+    // respond with pug page
+    res.render('404');
 });
 
 server.listen(3000, function () {

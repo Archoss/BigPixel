@@ -5,6 +5,7 @@ extends layout
 
 block content
 	form.subscribe(action="/signUp" method="POST")
+		.fond
 		.container
 			.form-row.align-items-center.margin
 				-//############   GENRE   ############ 
@@ -21,54 +22,54 @@ block content
 				.form-group.col-md-6
 					label(for='pseudo') Pseudo 
 						span.red *
-					input#pseudo.form-control(type='text', placeholder='Saisissez un pseudo' name="pseudo" required)
+					input#pseudo.form-control(type='text', name="pseudo" required)
 				-//############   PASSWORD   ############ 
 				.form-group.col-md-6
 					label(for='password') Mot de passe 
 						span.red *
-					input#password.form-control(type='password', placeholder='Saisissez un mot de passe' name="password" required)
+					input#password.form-control(type='password', name="password" required)
 				-//############   NOM   ############ 
 				.form-group.col-md-6
 					label(for='lastname') Nom 
 						span.red *
-					input#lastname.form-control(type='text', placeholder='Saisissez un nom' name="lastname" required)
+					input#lastname.form-control(type='text', name="lastname" required)
 				-//############   PRENOM   ############ 
 				.form-group.col-md-6
 					label(for='firstname') Prénom 
 						span.red *
-					input#firstname.form-control(type='text', placeholder='Saisissez un prénom' name="firstname" required)
+					input#firstname.form-control(type='text', name="firstname" required)
 			.form-row.align-items-center
 				-//############   AGE   ############ 
 				.form-group.col-md-6
 					label(for='age') Age 
 						span.red *
-					input#age.form-control(type='text', placeholder='Saisissez un age' name="age" required)
+					input#age.form-control(type='text', name="age" required)
 				-//############   COORDONNEES   ############ 
 				.form-group.col-md-6
 					label(for='adress') Coordoonnées 
-					input#adress.form-control(type='text', placeholder='Saisissez une adresse' name="adress" required)
+					input#adress.form-control(type='text', name="adress")
 				-//############   EMAIL   ############ 
 				.form-group.col-md-6
 					label(for='email') Email 
 						span.red *
-					input#email.form-control(type='email', placeholder='Saisissez un email' name="email" required)
+					input#email.form-control(type='email', name="email" required)
 				-//############   CITY   ############ 
 				.form-group.col-md-6
 					label(for='city') City
-					input#city.form-control(type='text' placeholder='Saisissez une ville' name="city")
+					input#city.form-control(type='text' name="city")
 			.form-row.align-items-center
 				-//############   FILM   ############ 
 				.form-group.col-md-6
 					label(for='movie') Film préféré
-					input#movie.form-control(type='text' placeholder='Saisissez un film' name="movie")
+					input#movie.form-control(type='text' name="movie")
 				-//############   JEU   ############ 
 				.form-group.col-md-6
 					label(for='game') Jeu préféré
-					input#game.form-control(type='text' placeholder='Saisissez un jeu' name="game")
+					input#game.form-control(type='text' name="game")
 				-//############   PRESENTATION   ############ 
 			.form-row.align-items-center
 				label(for='presentation') Présentation
-				textarea.form-control(placeholder='Présentez-vous' name="presentation")
+				textarea.form-control( name="presentation")
 			button.btn.btn(type='submit') Envoyer
 			
 	script.

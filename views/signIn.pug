@@ -1,0 +1,47 @@
+//- #####################
+//- //   Inscription   //
+//- #####################
+extends layout
+
+block content
+	form.signIn(action="/signIn" method="POST")
+		.fond
+		.container
+			.form-row.align-items-center.margin
+				-//############   PSEUDO   ############ 
+				.form-group.col-md-6
+					label(for='pseudo') Pseudo 
+						span.red *
+					input#pseudo.form-control(type='text', name="pseudo" required)
+				-//############   PASSWORD   ############ 
+				.form-group.col-md-6
+					label(for='password') Mot de passe 
+						span.red *
+					input#password.form-control(type='password', name="password" required)
+			button.btn.btn(type='submit') Envoyer
+			
+	script.
+		$('document').ready(function() {
+			console.log( "ready!" );
+			//- $("#pseudo").focusout(function() {
+			//- 	if($("#pseudo")) {
+			//- 		console.log($("#pseudo").val());
+			//- 	}
+			//- })
+			//- $("#email").focusout(function() {
+			//- 	if($("#email")) {
+			//- 		console.log($("#email").val());
+			//- 	}
+			//- })
+			//- $("#password").focusout(function() {
+			//- 	if($("#password")) {
+			//- 		console.log($("#password").val());
+			//- 	}
+			//- })
+			//- $("#email").focusout(function() {
+			//- 	if($("#email")) {
+			//- 		console.log($("#pseudo").val());
+			//- 	}
+			//- })
+			//- $("#pseudo").val();
+		});
