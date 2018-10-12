@@ -7,35 +7,79 @@ block content
          .description
             p 
                span Pseudo : 
-               span #{user.pseudo} 
-               a(href="#") Modifier   
+               span
+                  input#inputPseudo(type="text" value=user.pseudo disabled)
+               i
+                  a#editPseudo(href="#") Modifier   
             p 
                span Email : 
-               span #{user.email}
+               span
+                  input#inputEmail(type="text" value=user.email disabled)
+               i
+                  a#editEmail(href="#") Modifier   
             p 
                span Password : 
-               span #{user.password}
+               span
+                  input#inputPassword(type="text" value=user.password disabled)
+               i
+                  a#editPassword(href="#") Modifier   
             p 
                span Nom : 
-               span #{user.lastname}
+               span
+                  input#inputLastname(type="text" value=user.lastname disabled)
+               i
+                  a#editLastname(href="#") Modifier   
             p 
                span Prénom : 
-               span #{user.firstname}
+               span
+                  input#inputFirstname(type="text" value=user.firstname disabled)
+               i
+                  a#editFirstname(href="#") Modifier   
             p 
                span Age : 
-               span #{user.age}
+               span
+                  input#inputAge(type="text" value=user.age disabled)
+               i
+                  a#editAge(href="#") Modifier   
             p 
                span Coordonnées : 
-               span #{user.adress}
+               span
+                  input#inputAdress(type="text" value=user.adress disabled)
+               i
+                  a#editAdress(href="#") Modifier   
             p 
                span Ville : 
-               span #{user.city}
+               span
+                  input#inputCity(type="text" value=user.city disabled)
+               i
+                  a#editCity(href="#") Modifier   
             p 
                span Film préféré :
-               span #{user.movie}
+               span
+                  input#inputMovie(type="text" value=user.movie disabled)
+               i
+                  a#editMovie(href="#") Modifier   
             p 
                span Jeu préféré :
-               span #{user.game}
+               span
+                  input#inputGame(type="text" value=user.game disabled)
+               i
+                  a#editGame(href="#") Modifier   
             p 
                span Présentation : 
-               span #{user.presentation}
+               span
+                  textarea#inputPresentation(value=user.presentation, name="", cols="30", rows="30" disabled)
+               i
+                  a#editPresentation(href="#") Modifier   
+
+      script.
+         window.addEventListener('DOMContentLoaded', function() {
+            console.log('ready');
+            $("#editPseudo").click(function() {
+               if($("#inputPseudo").prop("disabled")) {
+                  $("#inputPseudo").prop("disabled", false);
+               } else if ($("#inputPseudo").prop("disabled", false)) {
+                  $("#inputPseudo").prop("disabled");
+               }
+            })
+         })

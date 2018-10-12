@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
     });
   })
   .post('/signUp', function (req, res, next) {
-    console.log(req.body)
+    // console.log(req.body)
     let user = {
       pseudo: req.body.pseudo.trim(),
       email: req.body.email,
@@ -24,21 +24,25 @@ router.get('/', function (req, res, next) {
     }
     // /---/  MONGO  /---/ //
     req.db.collection('utilisateurs').findOne({
-      pseudo: {
+      "user.pseudo": {
         $regex: user.pseudo,
         $options: "is"
       },
-      email: {
+      "user.email": {
         $regex: user.email,
         $options: "is"
       },
     }, function (err, result) {
       if (result) {
+        console.log("Le pseudo et/ou le mot de passe est déja pris")
         res.render('signUp', {
           error: true,
           message: "Le pseudo et/ou le mot de passe est déja pris"
         })
       } else {
+        // bcrypt.hash(req.body.password, 10, function (err, hash) {
+        //   // Store hash in database
+        // });
         req.db.collection('utilisateurs').insertOne({
             user
           },
@@ -53,4 +57,12 @@ router.get('/', function (req, res, next) {
       }
     })
   })
+  .post('/profile', function (req, res, next) {
+    req.db.collection('utilisateurs').findOne({
+      pseudo,
+      email,
+      pass,
+    })
+  })
+
 module.exports = router;

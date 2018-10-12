@@ -7,6 +7,8 @@ block content
 	form.subscribe(action="/signUp" method="POST")
 		.fond
 		.container
+			if(error) 
+				h2= message
 			.form-row.align-items-center.margin
 				-//############   GENRE   ############ 
 				.form-check.col-md-2.formCheckBoxs
@@ -31,19 +33,16 @@ block content
 				-//############   NOM   ############ 
 				.form-group.col-md-6
 					label(for='lastname') Nom 
-						span.red *
-					input#lastname.form-control(type='text', name="lastname" required)
+					input#lastname.form-control(type='text', name="lastname")
 				-//############   PRENOM   ############ 
 				.form-group.col-md-6
 					label(for='firstname') Prénom 
-						span.red *
-					input#firstname.form-control(type='text', name="firstname" required)
+					input#firstname.form-control(type='text', name="firstname")
 			.form-row.align-items-center
 				-//############   AGE   ############ 
 				.form-group.col-md-6
 					label(for='age') Age 
-						span.red *
-					input#age.form-control(type='text', name="age" required)
+					input#age.form-control(type='text', name="age")
 				-//############   COORDONNEES   ############ 
 				.form-group.col-md-6
 					label(for='adress') Coordoonnées 

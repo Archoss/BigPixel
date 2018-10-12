@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const server = require("http").Server(app);
 const expressMongoDb = require("express-mongo-db");
 const MongoStore = require("connect-mongo")(session);
+const bcrypt = require('bcryptjs');
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");

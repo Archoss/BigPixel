@@ -19,17 +19,21 @@
 	background-attachment: fixed;
 	/* background: #c5c5c5; */
 }
-footer {
-	text-align: center;
+
+footer p {
+	position: sticky;
+	bottom: 0;
 	color: rgb(212, 212, 212);
 }
 
 .home {
 	text-align: center;
 }
+
 .about {
 	color: white;
 }
+
 /* 
 .about {
 	padding: 20%;
@@ -62,9 +66,34 @@ article {
 	margin: 3% 5%;
 }
 
-article .description {
-	font-size: 1.3rem;
+.description span {
+	font-size: 1.4rem;
 	margin: auto;
+}
+
+.description span input:disabled {
+	height: 35px;
+	width: 230px;
+	text-align: center;
+	background-color: #80808082;
+	color: #9c9c9c;
+	border: 1px solid;
+	border-radius: 5px;
+}
+
+.description span textarea:disabled {
+	height: 100px;
+	width: 380px;
+	text-align: center;
+	background-color: #80808082;
+	color: #9c9c9c;
+	border-radius: 5px;
+}
+
+.description a {
+	font-size: 1.2rem;
+	margin: auto;
+	color: rgb(75, 153, 255);
 }
 
 .description p {
@@ -77,8 +106,13 @@ article .description {
 }
 
 .description p span:last-of-type {
+	margin: 0 2% 0 50%;
 	display: inline-block;
-	float: right;
+}
+
+.description a:hover {
+	color: #97cdff;
+	text-decoration: none;
 }
 
 nav {
@@ -110,6 +144,7 @@ nav form .search {
 nav form button:hover {
 	background-color: rgba(255, 255, 255, 0.418);
 }
+
 nav form button {
 	background-color: rgba(0, 0, 0, 0);
 }
@@ -167,16 +202,17 @@ nav ul {
 .signIn input[type="text"],
 .signIn input[type="email"],
 .signIn input[type="password"] {
-	background: rgba(255, 255, 255, 0.719);
+	background: rgba(255, 255, 255, 0.644);
 	letter-spacing: 1px;
-	color: rgb(255, 255, 255);
+	font-size: 1.2rem;
+	color: rgb(56, 56, 56);
 	border: none;
 	border-radius: 6px;
 	border-bottom: rgb(155, 155, 155) solid 1px;
 }
 
 .subscribe textarea {
-	background: rgba(255, 255, 255, 0.719);
+	background: rgba(255, 255, 255, 0.644);
 	letter-spacing: 1px;
 	border-radius: 6px;
 }
@@ -245,7 +281,7 @@ input[type="radio"]:after {
 	height: 20px;
 	margin-bottom: 1%;
 	position: relative;
-	background-color: #ffffff;
+	background-color: #c3c3c3;
 	content: "";
 	display: inline-block;
 	visibility: visible;
