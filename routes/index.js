@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+let shortId = require('short-id')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -43,26 +44,42 @@ router.get('/', function (req, res, next) {
         // bcrypt.hash(req.body.password, 10, function (err, hash) {
         //   // Store hash in database
         // });
-        req.db.collection('utilisateurs').insertOne({
-            user
-          },
+        req.db.collection('utilisateurs').insertOne(user,
           err => {
             if (err) {
               throw err;
             } else {
               req.session.user = user
-              res.redirect("/profile");
+              res.redirect("/profil");
             }
           })
       }
     })
   })
-  .post('/profile', function (req, res, next) {
-    req.db.collection('utilisateurs').findOne({
-      pseudo,
-      email,
-      pass,
-    })
+  .post('/profil', function (req, res) {
+    let user = {
+      pseudo: req.body.pseudo.trim(),
+      email: req.body.email,
+      password: req.body.password,
+      lastname: req.body.lastname.trim(),
+      firstname: req.body.firstname.trim(),
+      age: req.body.age,
+      adress: req.body.adress.trim(),
+      city: req.body.city.trim(),
+      movie: req.body.movie.trim(),
+      game: req.body.game.trim(),
+      presentation: req.body.presentation,
+    }
+    req.db.collection('utilisateurs').updateOne({
+        pseudo: req.body.pseudo
+      },
+      user, err => {
+        if (err) {
+          throw err;
+        } else {
+          req.session.user = user
+        }
+      })
   })
 
 module.exports = router;

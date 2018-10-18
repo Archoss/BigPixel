@@ -71,7 +71,19 @@ article {
 	margin: auto;
 }
 
-.description span input:disabled {
+.description span input,
+.description span textarea {
+	height: 35px;
+	width: 230px;
+	text-align: center;
+	background-color: #d8d8d8;
+	color: #5a5a5a;
+	border: none;
+	border-radius: 5px;
+}
+
+.description span input:disabled,
+.description span textarea:disabled {
 	height: 35px;
 	width: 230px;
 	text-align: center;
@@ -106,7 +118,7 @@ article {
 }
 
 .description p span:last-of-type {
-	margin: 0 2% 0 50%;
+	margin: 0 2% 0 46%;
 	display: inline-block;
 }
 
@@ -224,13 +236,13 @@ nav ul {
 	box-shadow: inset grey 0 0 0;
 }
 
+article button,
 .subscribe button,
 .signIn button {
 	background: linear-gradient(180deg, #b9b9b9, #909090);
 	border: none;
 	font-size: 1.5rem;
-	font-weight: bold;
-	color: #474747;
+	color: #000000;
 
 	margin: 3% 40%;
 	width: 14rem;
@@ -243,6 +255,7 @@ nav ul {
 	box-shadow: 0 0 0 0 black;
 }
 
+article button:hover,
 .subscribe button:hover,
 .signIn button:hover {
 	background: linear-gradient(180deg, #e4e3e3, #8d8d8d);
@@ -292,7 +305,7 @@ input[type="radio"]:checked:after {
 	transition: 0.5s all;
 	width: 20px;
 	height: 20px;
-	border-radius: 5px;
+	border-radius: 7px;
 	margin-bottom: 1%;
 	position: relative;
 	background-color: #ff9100;

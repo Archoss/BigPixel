@@ -63,10 +63,10 @@ app.get("/about", function (req, res) {
     });
 });
 
-app.get("/profile", function (req, res) {
+app.get("/profil", function (req, res) {
     let user = req.session.user;
     console.log(req.session.user);
-    res.render("profile", {
+    res.render("profil", {
         titre: "BigPixel",
         user: user
     });
