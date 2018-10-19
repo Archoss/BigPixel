@@ -4,7 +4,7 @@
 extends layout
 
 block content
-	form.subscribe(action="/signUp" method="POST")
+	form.subscribe.disableLoad(action="/signUp" method="POST")
 		.fond
 		.container
 			if(error) 
@@ -54,7 +54,7 @@ block content
 					input#email.form-control(type='email', name="email" required)
 				-//############   CITY   ############ 
 				.form-group.col-md-6
-					label(for='city') City
+					label(for='city') Ville
 					input#city.form-control(type='text' name="city")
 			.form-row.align-items-center
 				-//############   FILM   ############ 
@@ -69,11 +69,26 @@ block content
 			.form-row.align-items-center
 				label(for='presentation') Présentation
 				textarea.form-control( name="presentation")
-			button.btn.btn(type='submit') Envoyer
+			button.load.btn.btn(type='submit') 
+				span Envoyer
+				.lds-ellipsis
+					div
+					div
+					div
+					div
 			
 	script.
 		$('document').ready(function() {
 			console.log( "ready!" );
+			// -- //
+			$('.lds-ellipsis').hide();
+			$('.disableLoad').submit(function () {
+				console.log('test');
+				$('button span').html('');
+				$('.load').prop('disabled', true);
+				$('.lds-ellipsis').show();
+			})
+			// -- //
 			//- $("#pseudo").focusout(function() {
 			//- 	if($("#pseudo")) {
 			//- 		console.log($("#pseudo").val());
