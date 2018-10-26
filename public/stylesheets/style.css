@@ -40,6 +40,7 @@ footer p {
 } */
 
 article h1 {
+	margin: 10% 0% 2% 0%;
 	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.699);
 	text-align: center;
 	padding: 0% 5% 5% 5%;
@@ -61,9 +62,10 @@ article {
 	#ffffffc7,
 	#dadadabb,
 	#bdbdbd00); */
-	border-radius: 15px;
-	padding: 5% 20%;
-	margin: 3% 5%;
+}
+
+.description{
+	text-align: center;
 }
 
 .description span {
@@ -74,7 +76,7 @@ article {
 .description span input,
 .description span textarea {
 	height: 35px;
-	width: 230px;
+	width: 240px;
 	text-align: center;
 	background-color: #d8d8d8;
 	color: #5a5a5a;
@@ -84,8 +86,6 @@ article {
 
 .description span input:disabled,
 .description span textarea:disabled {
-	height: 35px;
-	width: 230px;
 	text-align: center;
 	background-color: #80808082;
 	color: #9c9c9c;
@@ -95,7 +95,7 @@ article {
 
 .description span textarea:disabled {
 	height: 100px;
-	width: 380px;
+	width: 240px;
 	text-align: center;
 	background-color: #80808082;
 	color: #9c9c9c;
@@ -118,7 +118,7 @@ article {
 }
 
 .description p span:last-of-type {
-	margin: 0 2% 0 46%;
+	margin: 0 0 0 10%;
 	display: inline-block;
 }
 

@@ -1,82 +1,81 @@
 extends layout
 
 block content  
-	.container-fluid
+	.container
 		article.profil
 			h1 Profil
-			.description
-				form.profil(action="/profil", method="post")
-					p 
-						span Pseudo : 
-						span
-							input#inputPseudo(type="text" value=user.pseudo disabled)
-							i
-								a#editPseudo(href="#") Modifier   
-					p 
-						span Email : 
-						span
-							input#inputEmail(type="text" value=user.email disabled)
-							i
-								a#editEmail(href="#") Modifier   
-					p 
-						span Password : 
-						span
-							input#inputPassword(type="text" value=user.password disabled)
-							i
-								a#editPassword(href="#") Modifier   
-					p 
-						span Nom : 
-						span
-							input#inputLastname(type="text" value=user.lastname disabled)
-							i
-								a#editLastname(href="#") Modifier   
-					p 
-						span Prénom : 
-						span
-							input#inputFirstname(type="text" value=user.firstname disabled)
-							i
-								a#editFirstname(href="#") Modifier   
-					p 
-						span Age : 
-						span
-							input#inputAge(type="text" value=user.age disabled)
-							i
-								a#editAge(href="#") Modifier   
-					p 
-						span Coordonnées : 
-						span
-							input#inputAdress(type="text" value=user.adress disabled)
-							i
-								a#editAdress(href="#") Modifier   
-					p 
-						span Ville : 
-						span
-							input#inputCity(type="text" value=user.city disabled)
-							i
-								a#editCity(href="#") Modifier   
-					p 
-						span Film préféré :
-						span
-							input#inputMovie(type="text" value=user.movie disabled)
-							i
-								a#editMovie(href="#") Modifier   
-					p 
-						span Jeu préféré :
-						span
-							input#inputGame(type="text" value=user.game disabled)
-							i
-								a#editGame(href="#") Modifier   
-					p 
-						span Présentation : 
-						span
-							textarea#inputPresentation(name="", cols="30", rows="30" value=user.presentation disabled)
-							i
-								a#editPresentation(href="#")  Modifier   
-				button Save
+			form.profil.description(action="/profil", method="post")
+				p 
+					span Pseudo : 
+					span
+						input#inputPseudo(type="text" value=user.pseudo disabled)
+						//- i
+							//- a#editPseudo(href="#") Modifier   
+				p 
+					span Email : 
+					span
+						input#inputEmail(type="text" value=user.email disabled)
+						//- i
+							//- a#editEmail(href="#") Modifier   
+				p 
+					span Password : 
+					span
+						input#inputPassword(type="text" value=user.password disabled)
+						i
+							//- a#editPassword(href="#") Modifier   
+				p 
+					span Nom : 
+					span
+						input#inputLastname(type="text" value=user.lastname disabled)
+						i
+							//- a#editLastname(href="#") Modifier   
+				p 
+					span Prénom : 
+					span
+						input#inputFirstname(type="text" value=user.firstname disabled)
+						i
+							//- a#editFirstname(href="#") Modifier   
+				p 
+					span Age : 
+					span
+						input#inputAge(type="text" value=user.age disabled)
+						i
+							//- a#editAge(href="#") Modifier   
+				p 
+					span Coordonnées : 
+					span
+						input#inputAdress(type="text" value=user.adress disabled)
+						i
+							//- a#editAdress(href="#") Modifier   
+				p 
+					span Ville : 
+					span
+						input#inputCity(type="text" value=user.city disabled)
+						i
+							//- a#editCity(href="#") Modifier   
+				p 
+					span Film préféré :
+					span
+						input#inputMovie(type="text" value=user.movie disabled)
+						i
+							//- a#editMovie(href="#") Modifier   
+				p 
+					span Jeu préféré :
+					span
+						input#inputGame(type="text" value=user.game disabled)
+						i
+							//- a#editGame(href="#") Modifier   
+				p 
+					span Présentation : 
+					span
+						textarea#inputPresentation(name="", cols="30", rows="30" value=user.presentation disabled)
+						i
+							//- a#editPresentation(href="#")  Modifier   
+				button#modifySave Save
 	script.
 		window.addEventListener('DOMContentLoaded', function() {
 			console.log('ready');
-			$("#editPseudo").click(function() {
+			$("#modifySave").click(function() {
 				if ($("#inputPseudo").prop("disabled")) {
 					$("#inputPseudo").prop("disabled", false);
 					console.log('#inputPseudo true');
@@ -84,8 +83,6 @@ block content
 					$("#inputPseudo").prop("disabled", true);
 					console.log('#inputPseudo false');
 				}
-			})
-			$("#editEmail").click(function() {
 				if ($("#inputEmail").prop("disabled")) {
 					$("#inputEmail").prop("disabled", false);
 					console.log('#inputEmail true');
@@ -93,8 +90,6 @@ block content
 					$("#inputEmail").prop("disabled", true);
 					console.log('#inputEmail false');
 				}
-			})
-			$("#editPassword").click(function() {
 				if ($("#inputPassword").prop("disabled")) {
 					$("#inputPassword").prop("disabled", false);
 					console.log('#inputPassword true');
@@ -102,8 +97,6 @@ block content
 					$("#inputPassword").prop("disabled", true);
 					console.log('#inputPassword false');
 				}
-			})
-			$("#editLastname").click(function() {
 				if ($("#inputLastname").prop("disabled")) {
 					$("#inputLastname").prop("disabled", false);
 					console.log('#inputLastname true');
@@ -111,8 +104,6 @@ block content
 					$("#inputLastname").prop("disabled", true);
 					console.log('#inputLastname false');
 				}
-			})
-			$("#editFirstname").click(function() {
 				if ($("#inputFirstname").prop("disabled")) {
 					$("#inputFirstname").prop("disabled", false);
 					console.log('#inputFirstname true');
@@ -120,8 +111,6 @@ block content
 					$("#inputFirstname").prop("disabled", true);
 					console.log('#inputFirstname false');
 				}
-			})
-			$("#editAge").click(function() {
 				if ($("#inputAge").prop("disabled")) {
 					$("#inputAge").prop("disabled", false);
 					console.log('#inputAge true');
@@ -129,8 +118,6 @@ block content
 					$("#inputAge").prop("disabled", true);
 					console.log('#inputAge false');
 				}
-			})
-			$("#editAdress").click(function() {
 				if ($("#inputAdress").prop("disabled")) {
 					$("#inputAdress").prop("disabled", false);
 					console.log('#inputAdress true');
@@ -138,8 +125,6 @@ block content
 					$("#inputAdress").prop("disabled", true);
 					console.log('#inputAdress false');
 				}
-			})
-			$("#editCity").click(function() {
 				if ($("#inputCity").prop("disabled")) {
 					$("#inputCity").prop("disabled", false);
 					console.log('#inputCity true');
@@ -147,8 +132,6 @@ block content
 					$("#inputCity").prop("disabled", true);
 					console.log('#inputCity false');
 				}
-			})
-			$("#editMovie").click(function() {
 				if ($("#inputMovie").prop("disabled")) {
 					$("#inputMovie").prop("disabled", false);
 					console.log('#inputMovie true');
@@ -157,23 +140,103 @@ block content
 					console.log('#inputMovie false');
 				}
 			})
-			$("#editGame").click(function() {
-				if ($("#inputGame").prop("disabled")) {
-					$("#inputGame").prop("disabled", false);
-					console.log('#inputGame true');
-				}else{
-					$("#inputGame").prop("disabled", true);
-					console.log('#inputGame false');
-				}
-			})
-			$("#editPresentation").click(function() {
-				if ($("#inputPresentation").prop("disabled")) {
-					$("#inputPresentation").prop("disabled", false);
-					console.log('#inputPresentation true');
-				}else{
-					$("#inputPresentation").prop("disabled", true);
-					console.log('#inputPresentation false');
-				}
-			})
-			
+			//- $("#editPseudo").click(function() {
+			//- 	if ($("#inputPseudo").prop("disabled")) {
+			//- 		$("#inputPseudo").prop("disabled", false);
+			//- 		console.log('#inputPseudo true');
+			//- 	}else{
+			//- 		$("#inputPseudo").prop("disabled", true);
+			//- 		console.log('#inputPseudo false');
+			//- 	}
+			//- })
+			//- $("#editEmail").click(function() {
+			//- 	if ($("#inputEmail").prop("disabled")) {
+			//- 		$("#inputEmail").prop("disabled", false);
+			//- 		console.log('#inputEmail true');
+			//- 	}else{
+			//- 		$("#inputEmail").prop("disabled", true);
+			//- 		console.log('#inputEmail false');
+			//- 	}
+			//- })
+			//- $("#editPassword").click(function() {
+			//- 	if ($("#inputPassword").prop("disabled")) {
+			//- 		$("#inputPassword").prop("disabled", false);
+			//- 		console.log('#inputPassword true');
+			//- 	}else{
+			//- 		$("#inputPassword").prop("disabled", true);
+			//- 		console.log('#inputPassword false');
+			//- 	}
+			//- })
+			//- $("#editLastname").click(function() {
+			//- 	if ($("#inputLastname").prop("disabled")) {
+			//- 		$("#inputLastname").prop("disabled", false);
+			//- 		console.log('#inputLastname true');
+			//- 	}else{
+			//- 		$("#inputLastname").prop("disabled", true);
+			//- 		console.log('#inputLastname false');
+			//- 	}
+			//- })
+			//- $("#editFirstname").click(function() {
+			//- 	if ($("#inputFirstname").prop("disabled")) {
+			//- 		$("#inputFirstname").prop("disabled", false);
+			//- 		console.log('#inputFirstname true');
+			//- 	}else{
+			//- 		$("#inputFirstname").prop("disabled", true);
+			//- 		console.log('#inputFirstname false');
+			//- 	}
+			//- })
+			//- $("#editAge").click(function() {
+			//- 	if ($("#inputAge").prop("disabled")) {
+			//- 		$("#inputAge").prop("disabled", false);
+			//- 		console.log('#inputAge true');
+			//- 	}else{
+			//- 		$("#inputAge").prop("disabled", true);
+			//- 		console.log('#inputAge false');
+			//- 	}
+			//- })
+			//- $("#editAdress").click(function() {
+			//- 	if ($("#inputAdress").prop("disabled")) {
+			//- 		$("#inputAdress").prop("disabled", false);
+			//- 		console.log('#inputAdress true');
+			//- 	}else{
+			//- 		$("#inputAdress").prop("disabled", true);
+			//- 		console.log('#inputAdress false');
+			//- 	}
+			//- })
+			//- $("#editCity").click(function() {
+			//- 	if ($("#inputCity").prop("disabled")) {
+			//- 		$("#inputCity").prop("disabled", false);
+			//- 		console.log('#inputCity true');
+			//- 	}else{
+			//- 		$("#inputCity").prop("disabled", true);
+			//- 		console.log('#inputCity false');
+			//- 	}
+			//- })
+			//- $("#editMovie").click(function() {
+			//- 	if ($("#inputMovie").prop("disabled")) {
+			//- 		$("#inputMovie").prop("disabled", false);
+			//- 		console.log('#inputMovie true');
+			//- 	}else{
+			//- 		$("#inputMovie").prop("disabled", true);
+			//- 		console.log('#inputMovie false');
+			//- 	}
+			//- })
+			//- $("#editGame").click(function() {
+			//- 	if ($("#inputGame").prop("disabled")) {
+			//- 		$("#inputGame").prop("disabled", false);
+			//- 		console.log('#inputGame true');
+			//- 	}else{
+			//- 		$("#inputGame").prop("disabled", true);
+			//- 		console.log('#inputGame false');
+			//- 	}
+			//- })
+			//- $("#editPresentation").click(function() {
+			//- 	if ($("#inputPresentation").prop("disabled")) {
+			//- 		$("#inputPresentation").prop("disabled", false);
+			//- 		console.log('#inputPresentation true');
+			//- 	}else{
+			//- 		$("#inputPresentation").prop("disabled", true);
+			//- 		console.log('#inputPresentation false');
+			//- 	}
+			//- })	
 		})

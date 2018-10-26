@@ -4,10 +4,10 @@ let shortId = require('short-id')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('accueil', {
-      title: 'BigPixel'
-    });
-  })
+  res.render('accueil', {
+    title: 'BigPixel'
+  });
+})
   .post('/signUp', function (req, res, next) {
     // console.log(req.body)
     let user = {
@@ -25,11 +25,11 @@ router.get('/', function (req, res, next) {
     }
     // /---/  MONGO  /---/ //
     req.db.collection('utilisateurs').findOne({
-      "user.pseudo": {
+      "pseudo": {
         $regex: user.pseudo,
         $options: "is"
       },
-      "user.email": {
+      "email": {
         $regex: user.email,
         $options: "is"
       },
@@ -71,8 +71,8 @@ router.get('/', function (req, res, next) {
       presentation: req.body.presentation,
     }
     req.db.collection('utilisateurs').updateOne({
-        pseudo: req.body.pseudo
-      },
+      pseudo: req.body.pseudo
+    },
       user, err => {
         if (err) {
           throw err;
