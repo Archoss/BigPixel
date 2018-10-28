@@ -4,6 +4,8 @@
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
+
+
 .fond {
 	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
 	position: fixed;
@@ -21,7 +23,7 @@
 }
 
 footer p {
-	position: sticky;
+	position: absolute;
 	bottom: 0;
 	color: rgb(212, 212, 212);
 }
@@ -136,6 +138,7 @@ nav {
 
 	font-size: 1.2rem;
 	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
+	font-weight: bold;
 }
 
 nav form {
@@ -143,6 +146,7 @@ nav form {
 }
 
 nav form .searchInput {
+	box-shadow: inset 1px 1px 3px black;
 	height: 1.8rem;
 	border-radius: 20px;
 	border: none;
@@ -161,8 +165,10 @@ nav form button {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.nav-link {
+.item {
 	color: #202020;
+	font-weight: bolder;
+	margin-top: -5px;
 }
 
 .navbar-brand {
@@ -174,19 +180,22 @@ nav ul {
 	margin-left: 3%;
 }
 
-.nav-link:focus,
-.nav-link:hover {
+.item:focus,
+.item:hover {
 	transition: all 0.25s;
 	text-decoration: none;
-	background: #1d1d1d;
-	color: #56adff;
-	font-weight: bold;
+	background: #ffffff;
+	color: #ffffff;
+	height: 5px;
+	letter-spacing: 2px;
 }
 
-.nav-link:not(:hover) {
+.item:not(:hover) {
+	height: 5px;
 	transition: all 0.25s;
 	background: none;
 	font-weight: normal;
+	letter-spacing: normal;
 }
 
 .subscribe,
