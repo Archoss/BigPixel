@@ -4,8 +4,11 @@ let shortId = require('short-id')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+    console.log(req.session.user);
+
     res.render('accueil', {
-      title: 'BigPixel'
+      title: 'BigPixel',
+      user: req.session.user || null
     });
   })
   .post('/signUp', function (req, res, next) {
@@ -50,7 +53,10 @@ router.get('/', function (req, res, next) {
               throw err;
             } else {
               req.session.user = user
-              res.redirect("/profil");
+              res.render("profil", {
+                titre: "BigPixel",
+                user: user
+              });
             }
           })
       }

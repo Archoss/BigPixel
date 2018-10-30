@@ -34,7 +34,7 @@ app.use(
     session({
         secret: "thisisasecretshhhh",
         resave: false,
-        saveUninitialized: true,
+        saveUninitialized: false,
         cookie: {
             secure: false
         },
@@ -58,13 +58,22 @@ app.get("/signUp", function (req, res) {
     });
 });
 app.get("/about", function (req, res) {
+    let user = req.session.user;
     res.render("about", {
+        titre: "BigPixel",
+        user: user
+    });
+});
+app.get("/logout", function (req, res) {
+    res.render("accueil", {
         titre: "BigPixel"
     });
+    req.session.destroy();
 });
 
 app.get("/profil", function (req, res) {
     let user = req.session.user;
+    console.log('mdr')
     console.log(req.session.user);
     res.render("profil", {
         titre: "BigPixel",
