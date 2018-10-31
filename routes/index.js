@@ -62,6 +62,34 @@ router.get('/', function (req, res, next) {
       }
     })
   })
+  .post('/signIn', function (req, res, next) {
+    // console.log(req.body)
+    let user = {
+      pseudo: req.body.pseudo.trim(),
+      password: req.body.password
+    }
+    // /---/  MONGO  /---/ //
+    req.db.collection('utilisateurs').findOne({
+      "user.pseudo": {
+        $regex: user.pseudo,
+        $options: "is"
+      },
+      "user.password": {
+        $regex: user.password,
+        $options: "is"
+      },
+    }, function (err, result) {
+      if (result) {
+        console.log("Connexion")
+        res.render("profil", {
+          titre: "BigPixel"
+        });
+        // bcrypt.hash(req.body.password, 10, function (err, hash) {
+        //   // Store hash in database
+        // });
+      }
+    })
+  })
   .post('/profil', function (req, res) {
     let user = {
       pseudo: req.body.pseudo.trim(),

@@ -4,11 +4,12 @@
 extends layout
 
 block content
+	h1 Inscription
 	form.subscribe.disableLoad(action="/signUp" method="POST")
 		.fond
 		.container
 			if(error) 
-				h2= message
+				h2.errorMsg= message
 			.form-row.align-items-center.margin
 				-//############   GENRE   ############ 
 				.form-check.col-md-2.formCheckBoxs
