@@ -4,6 +4,7 @@ let shortId = require('short-id')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+<<<<<<< HEAD
     console.log(req.session.user);
 
     res.render('accueil', {
@@ -11,6 +12,12 @@ router.get('/', function (req, res, next) {
       user: req.session.user || null
     });
   })
+=======
+  res.render('accueil', {
+    title: 'BigPixel'
+  });
+})
+>>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
   .post('/signUp', function (req, res, next) {
     // console.log(req.body)
     let user = {
@@ -28,11 +35,11 @@ router.get('/', function (req, res, next) {
     }
     // /---/  MONGO  /---/ //
     req.db.collection('utilisateurs').findOne({
-      "user.pseudo": {
+      "pseudo": {
         $regex: user.pseudo,
         $options: "is"
       },
-      "user.email": {
+      "email": {
         $regex: user.email,
         $options: "is"
       },
@@ -105,8 +112,8 @@ router.get('/', function (req, res, next) {
       presentation: req.body.presentation,
     }
     req.db.collection('utilisateurs').updateOne({
-        pseudo: req.body.pseudo
-      },
+      pseudo: req.body.pseudo
+    },
       user, err => {
         if (err) {
           throw err;

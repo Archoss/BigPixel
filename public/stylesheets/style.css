@@ -4,6 +4,8 @@
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
+
+
 .fond {
 	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
 	position: fixed;
@@ -21,7 +23,11 @@
 }
 
 footer p {
+<<<<<<< HEAD
 	position: fixed;
+=======
+	position: absolute;
+>>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
 	bottom: 0;
 	color: rgb(212, 212, 212);
 }
@@ -42,8 +48,14 @@ footer p {
 	padding: 20%;
 } */
 
+<<<<<<< HEAD
 h1 {
 	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.4), -1px -2px 0 rgba(255, 255, 255, 1);
+=======
+article h1 {
+	margin: 10% 0% 2% 0%;
+	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.699);
+>>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
 	text-align: center;
 	padding: 5% 5% 1% 5%;
 	font-weight: bolder;
@@ -74,9 +86,10 @@ article {
 	#ffffffc7,
 	#dadadabb,
 	#bdbdbd00); */
-	border-radius: 15px;
-	padding: 5% 20%;
-	margin: 3% 5%;
+}
+
+.description{
+	text-align: center;
 }
 
 .description {
@@ -101,8 +114,6 @@ article {
 
 .description span input:disabled,
 .description span textarea:disabled {
-	height: 35px;
-	width: 230px;
 	text-align: center;
 	background-color: #80808082;
 	color: #9c9c9c;
@@ -153,6 +164,7 @@ nav {
 
 	font-size: 1.2rem;
 	box-shadow: 0px 0px 5px 2px rgba(58, 58, 58, 0.88);
+	font-weight: bold;
 }
 
 nav form {
@@ -160,6 +172,7 @@ nav form {
 }
 
 nav form .searchInput {
+	box-shadow: inset 1px 1px 3px black;
 	height: 1.8rem;
 	border-radius: 20px;
 	border: none;
@@ -178,8 +191,10 @@ nav form button {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.nav-link {
+.item {
 	color: #202020;
+	font-weight: bolder;
+	margin-top: -5px;
 }
 
 .navbar-brand {
@@ -191,19 +206,22 @@ nav ul {
 	margin-left: 3%;
 }
 
-.nav-link:focus,
-.nav-link:hover {
+.item:focus,
+.item:hover {
 	transition: all 0.25s;
 	text-decoration: none;
-	background: #1d1d1d;
-	color: #56adff;
-	font-weight: bold;
+	background: #ffffff;
+	color: #ffffff;
+	height: 5px;
+	letter-spacing: 2px;
 }
 
-.nav-link:not(:hover) {
+.item:not(:hover) {
+	height: 5px;
 	transition: all 0.25s;
 	background: none;
 	font-weight: normal;
+	letter-spacing: normal;
 }
 
 .subscribe,

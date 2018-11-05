@@ -1,4 +1,5 @@
 nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
+<<<<<<< HEAD
 	a.navbar-brand(href='/') BigPixel
 	button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
 		| Menu 
@@ -32,3 +33,23 @@ nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
 //-          $('#sessionDestroy').hide()
 //-       )
 //-    })   
+=======
+    a.navbar-brand(href='/') BigPixel
+    button.navbar-toggler.navbar-toggler-right(type='button', data-toggle='collapse', data-target='#navbarResponsive', aria-controls='navbarResponsive', aria-expanded='false', aria-label='Toggle navigation')
+        | Menu 
+        i.fas.fa-bars
+    #navbarResponsive.collapse.navbar-collapse
+        ul.navbar-nav.ml-auto
+            li.nav-item.item
+                a.nav-link(href='./signUp') Inscription
+            li.nav-item.item
+                a.nav-link(href='./signIn') Connexion
+            li.nav-item.item
+                a.nav-link(href='./about') A propos
+            li.nav-item.item
+                a.nav-link(href='./contact') Contact
+            form.form-inline.my-2.my-lg-0
+                input.form-control.mr-sm-2.searchInput(type='search', aria-label='Search')
+                button.btn.my-2.my-sm-0(type='submit')
+                    img.search(src="static/svg/search-solid.svg", alt="search icon")
+>>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
