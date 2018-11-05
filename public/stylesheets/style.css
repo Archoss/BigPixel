@@ -4,8 +4,6 @@
 		"Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
 }
 
-
-
 .fond {
 	background: url("../images/papers.co-ve24-dots-pattern-black-and-blue-abstract-29-wallpaper.jpg");
 	position: fixed;
@@ -23,11 +21,7 @@
 }
 
 footer p {
-<<<<<<< HEAD
-	position: fixed;
-=======
-	position: absolute;
->>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
+	position: relative;
 	bottom: 0;
 	color: rgb(212, 212, 212);
 }
@@ -48,14 +42,8 @@ footer p {
 	padding: 20%;
 } */
 
-<<<<<<< HEAD
 h1 {
 	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.4), -1px -2px 0 rgba(255, 255, 255, 1);
-=======
-article h1 {
-	margin: 10% 0% 2% 0%;
-	text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.699);
->>>>>>> e8d82e87ff2f6691ba3646246e3ed452d01f9551
 	text-align: center;
 	padding: 5% 5% 1% 5%;
 	font-weight: bolder;
@@ -88,7 +76,7 @@ article {
 	#bdbdbd00); */
 }
 
-.description{
+.description {
 	text-align: center;
 }
 
@@ -172,7 +160,9 @@ nav form {
 }
 
 nav form .searchInput {
-	box-shadow: inset 1px 1px 3px black;
+	transition: all 0.25s;
+	background-color: #56adff;
+	box-shadow: inset 0.5px 0.5px 5px rgba(0, 0, 0, 0.39);
 	height: 1.8rem;
 	border-radius: 20px;
 	border: none;
@@ -191,10 +181,15 @@ nav form button {
 	background-color: rgba(0, 0, 0, 0);
 }
 
-.item {
+.item a {
 	color: #202020;
+}
+
+.item {
+	text-align: center;
+	width: 140px;
 	font-weight: bolder;
-	margin-top: -5px;
+	margin-top: -40px;
 }
 
 .navbar-brand {
@@ -212,12 +207,13 @@ nav ul {
 	text-decoration: none;
 	background: #ffffff;
 	color: #ffffff;
-	height: 5px;
+	height: 7px;
+	width: 9rem;
 	letter-spacing: 2px;
 }
 
 .item:not(:hover) {
-	height: 5px;
+	height: 7px;
 	transition: all 0.25s;
 	background: none;
 	font-weight: normal;
@@ -329,6 +325,8 @@ input[type="radio"]:after {
 	height: 20px;
 	margin-bottom: 1%;
 	position: relative;
+	left: -4;
+	top: -5;
 	background-color: #c3c3c3;
 	content: "";
 	display: inline-block;
@@ -340,10 +338,10 @@ input[type="radio"]:checked:after {
 	transition: 0.5s all;
 	width: 20px;
 	height: 20px;
-	border-radius: 7px;
+	border-radius: 15px;
 	margin-bottom: 1%;
 	position: relative;
-	background-color: #ff9100;
+	background-color: #0090e4;
 	display: inline-block;
 	visibility: visible;
 }
