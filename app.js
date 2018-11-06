@@ -47,55 +47,55 @@ app.use(
 		})
 	})
 );
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+// app.use("/", indexRouter);
+// app.use("/users", usersRouter);
 
-app.get("/", function(req, res) {
+app.get("/", function (req, res) {
 	res.render("accueil", {
 		titre: "BigPixel"
 	});
 });
-app.get("/signUp", function(req, res) {
+app.get("/signUp", function (req, res) {
 	res.render("signUp", {
 		titre: "BigPixel"
 	});
 });
-app.get("/signIn", function(req, res) {
+app.get("/signIn", function (req, res) {
 	res.render("signIn", {
 		titre: "BigPixel"
 	});
 });
-app.get("/about", function(req, res) {
+app.get("/about", function (req, res) {
 	let user = req.session.user;
 	res.render("about", {
 		titre: "BigPixel",
 		user: user
 	});
 });
-app.get("/logout", function(req, res) {
+app.get("/logout", function (req, res) {
 	res.render("accueil", {
 		titre: "BigPixel"
 	});
 	req.session.destroy();
 });
 
-app.get("/profil", function(req, res) {
+app.get("/profil", function (req, res) {
 	let user = req.session.user;
 	console.log("mdr");
-	console.log(req.session.user);
+	console.log(req.session);
 	res.render("profil", {
 		titre: "BigPixel",
 		user: user
 	});
 });
 
-app.get("/404", function(req, res, next) {
+app.get("/404", function (req, res, next) {
 	res.status(404);
 	// respond with pug page
 	res.render("404");
 });
 
-server.listen(3000, function() {
+server.listen(3000, function () {
 	console.log("Serveur connecté sur le port 3000");
 });
 

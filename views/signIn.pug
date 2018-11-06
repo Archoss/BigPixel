@@ -8,7 +8,7 @@ block content
 	form.signIn(action="/signIn" method="POST")
 		.fond
 		.container
-			.form-row.align-items-center.margin
+			.form-row.align-items-center
 				-//############   PSEUDO   ############ 
 				.form-group.col-md-6
 					label(for='pseudo') Pseudo 
@@ -19,7 +19,7 @@ block content
 					label(for='password') Mot de passe 
 						span.red *
 					input#password.form-control(type='password', name="password" required)
-			button.btn.btn(type='submit') Envoyer
+			button.btn(type='submit') Envoyer
 			
 	script.
 		$('document').ready(function() {

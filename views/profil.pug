@@ -71,7 +71,7 @@ block content
 						textarea#inputPresentation(name="", cols="30", rows="30" value=user.presentation disabled)
 						i
 							//- a#editPresentation(href="#")  Modifier   
-				button#modifySave Save
+				button.btn.btn#modifySave Save
 	script.
 		window.addEventListener('DOMContentLoaded', function() {
 			console.log('ready');
@@ -138,6 +138,20 @@ block content
 				}else{
 					$("#inputMovie").prop("disabled", true);
 					console.log('#inputMovie false');
+				}
+				if ($("#inputGame").prop("disabled")) {
+					$("#inputGame").prop("disabled", false);
+					console.log('#inputGame true');
+				}else{
+					$("#inputGame").prop("disabled", true);
+					console.log('#inputGame false');
+				}
+				if ($("#inputPresentation").prop("disabled")) {
+					$("#inputPresentation").prop("disabled", false);
+					console.log('#inputPresentation true');
+				}else{
+					$("#inputPresentation").prop("disabled", true);
+					console.log('#inputPresentation false');
 				}
 			})
 			//- $("#editPseudo").click(function() {

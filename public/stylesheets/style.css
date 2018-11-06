@@ -12,7 +12,7 @@
 	z-index: -3;
 	width: 100%;
 	height: 100%;
-	filter: blur(3px);
+	filter: blur(4px);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
@@ -187,9 +187,9 @@ nav form button {
 
 .item {
 	text-align: center;
-	width: 140px;
 	font-weight: bolder;
 	margin-top: -40px;
+	width: 9rem;
 }
 
 .navbar-brand {
@@ -208,8 +208,8 @@ nav ul {
 	background: #ffffff;
 	color: #ffffff;
 	height: 7px;
-	width: 9rem;
 	letter-spacing: 2px;
+	font-size: 1.3rem;
 }
 
 .item:not(:hover) {

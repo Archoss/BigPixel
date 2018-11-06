@@ -52,7 +52,7 @@ router.get('/', function (req, res, next) {
             if (err) {
               throw err;
             } else {
-              req.session.user = user
+              req.session.user = user;
               res.render("profil", {
                 titre: "BigPixel",
                 user: user
@@ -62,28 +62,24 @@ router.get('/', function (req, res, next) {
       }
     })
   })
-  .post('/signIn', function (req, res, next) {
-    // console.log(req.body)
-    let user = {
+  .post('/signIn', function (req, res) {
+    console.log(req.body)
+    const {
+      pseudo,
+      password
+    } = {
       pseudo: req.body.pseudo.trim(),
       password: req.body.password
-    }
+    };
     // /---/  MONGO  /---/ //
     req.db.collection('utilisateurs').findOne({
-      "user.pseudo": {
-        $regex: user.pseudo,
-        $options: "is"
-      },
-      "user.password": {
-        $regex: user.password,
-        $options: "is"
-      },
-    }, function (err, result) {
-      if (result) {
+      pseudo,
+      password
+    }, function (err, user) {
+      if (user) {
         console.log("Connexion")
-        res.render("profil", {
-          titre: "BigPixel"
-        });
+        req.session.user = user
+        res.redirect('/profil')
         // bcrypt.hash(req.body.password, 10, function (err, hash) {
         //   // Store hash in database
         // });
@@ -92,20 +88,30 @@ router.get('/', function (req, res, next) {
   })
   .post('/profil', function (req, res) {
     let user = {
-      pseudo: req.body.pseudo.trim(),
+      pseudo: req.body.pseudo,
       email: req.body.email,
       password: req.body.password,
-      lastname: req.body.lastname.trim(),
-      firstname: req.body.firstname.trim(),
+      lastname: req.body.lastname,
+      firstname: req.body.firstname,
       age: req.body.age,
-      adress: req.body.adress.trim(),
-      city: req.body.city.trim(),
-      movie: req.body.movie.trim(),
-      game: req.body.game.trim(),
+      adress: req.body.adress,
+      city: req.body.city,
+      movie: req.body.movie,
+      game: req.body.game,
       presentation: req.body.presentation,
     }
     req.db.collection('utilisateurs').updateOne({
-        pseudo: req.body.pseudo
+        pseudo: user.pseudo,
+        email: user.email,
+        password: user.password,
+        lastname: user.lastname,
+        firstname: user.firstname,
+        age: user.age,
+        adress: user.adress,
+        city: user.city,
+        movie: user.movie,
+        game: user.game,
+        presentation: user.presentation
       },
       user, err => {
         if (err) {
