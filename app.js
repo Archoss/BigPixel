@@ -47,8 +47,8 @@ app.use(
 		})
 	})
 );
-// app.use("/", indexRouter);
-// app.use("/users", usersRouter);
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
 
 app.get("/", function (req, res) {
 	res.render("accueil", {
