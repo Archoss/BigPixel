@@ -6,16 +6,18 @@ nav#mainNav.navbar.navbar-expand-lg.navbar-light.fixed-top
 	#navbarResponsive.collapse.navbar-collapse
 		ul.navbar-nav.ml-auto
 		if !user
-			li.nav-item.item
+			li.nav-item.item.sub
 				a.nav-link(href='./signUp') Inscription
-			li.nav-item.item
+			li.nav-item.item.log
 				a.nav-link(href='./signIn') Connexion	
 		if user
-			li.nav-item.item
+			li.nav-item.item.deco
 				a.nav-link#sessionDestroy(href='/logout') Déconnexion
-			li.nav-item.item
+			li.nav-item.item.me
 				a.nav-link(href='/profil') Profil
-		li.nav-item.item
+			li.nav-item.item.wall
+				a.nav-link(href='/mur') Mur
+		li.nav-item.item.about
 			a.nav-link(href='./about') A propos
 		//- li.nav-item.item
 			a.nav-link(href='./contact') Contact

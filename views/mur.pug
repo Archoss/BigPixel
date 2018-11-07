@@ -1,0 +1,66 @@
+extends layout
+
+block content
+   .container
+      article.mur
+         h1 Mur
+         form.description(method='POST' action="/mur")
+            .form-row.align-items-center
+               textarea.form-control.wallTextarea#textinput(name="wallTextarea", user=user.pseudo placeholder="Exprimez-vous sur votre mur", rows="2")
+               button.load.btn(disabled)
+                  span Envoyer
+                  .lds-ellipsis
+                     div
+                     div
+                     div
+                     div
+      #papa
+
+         script.
+            $('document').ready(function() {
+               // -- //
+               $("#textinput").keyup(function(){
+                  if($("#textinput").val() !== "") {
+                     $(".btn").attr('disabled', false)
+                  } else {
+                     console.log('mdr')
+                     $(".btn").attr('disabled', true)
+                  }
+               })
+               function getRandomColor() {
+                  var letters = '0123456789ABCDEF';
+                  var color = '#';
+                  for (var i = 0; i < 6; i++) {
+                     color += letters[Math.floor(Math.random() * 16)];
+                  }
+                  return color + 'd3';
+               }
+               $('.btn').click(function(e) {
+                  let saisieTextarea = $('#textinput').val();
+                  e.preventDefault()
+                  //- console.log(user)
+                  const message = `
+                     <div class="card">
+                        <div class="card-header">
+                           ${$('#textinput').attr('user')} 
+                        </div>
+                        <div class="card-body">
+                           <blockquote class="blockquote mb-0">
+                              <p>${saisieTextarea}</p>
+                              <footer class="blockquote-footer"></footer>
+                           </blockquote>
+                        </div>
+                     </div>`                  
+                  $('#papa').prepend(message)
+                  $(".card:first").css("background-color", getRandomColor());
+                  $("#textinput").val("");
+                  $(".btn").attr('disabled', true)
+               })
+
+               $('.lds-ellipsis').hide();
+               $('.disableLoad').submit(function () {
+                  $('button span').html('');
+                  $('.load').prop('disabled', true);
+                  $('.lds-ellipsis').show();
+               })
+            })

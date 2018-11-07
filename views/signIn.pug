@@ -19,30 +19,47 @@ block content
 					label(for='password') Mot de passe 
 						span.red *
 					input#password.form-control(type='password', name="password" required)
-			button.btn(type='submit') Envoyer
+			button.load.btn(type='submit')                     
+				span Envoyer
+				.lds-ellipsis
+					div
+					div
+					div
+					div
 			
 	script.
 		$('document').ready(function() {
 			console.log( "ready!" );
-			//- $("#pseudo").focusout(function() {
-			//- 	if($("#pseudo")) {
-			//- 		console.log($("#pseudo").val());
-			//- 	}
-			//- })
-			//- $("#email").focusout(function() {
-			//- 	if($("#email")) {
-			//- 		console.log($("#email").val());
-			//- 	}
-			//- })
-			//- $("#password").focusout(function() {
-			//- 	if($("#password")) {
-			//- 		console.log($("#password").val());
-			//- 	}
-			//- })
-			//- $("#email").focusout(function() {
-			//- 	if($("#email")) {
-			//- 		console.log($("#pseudo").val());
-			//- 	}
-			//- })
-			//- $("#pseudo").val();
+			// -- //
+			$('.lds-ellipsis').hide();
+			$('.disableLoad').submit(function () {
+				console.log('test');
+				$('button span').html('');
+				$('.load').prop('disabled', true);
+				$('.lds-ellipsis').show();
+			})
+			$('document').ready(function() {
+				console.log( "ready!" );
+				//- $("#pseudo").focusout(function() {
+				//- 	if($("#pseudo")) {
+				//- 		console.log($("#pseudo").val());
+				//- 	}
+				//- })
+				//- $("#email").focusout(function() {
+				//- 	if($("#email")) {
+				//- 		console.log($("#email").val());
+				//- 	}
+				//- })
+				//- $("#password").focusout(function() {
+				//- 	if($("#password")) {
+				//- 		console.log($("#password").val());
+				//- 	}
+				//- })
+				//- $("#email").focusout(function() {
+				//- 	if($("#email")) {
+				//- 		console.log($("#pseudo").val());
+				//- 	}
+				//- })
+				//- $("#pseudo").val();
+			});
 		});

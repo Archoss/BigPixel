@@ -20,15 +20,19 @@
 	/* background: #c5c5c5; */
 }
 
-footer p {
-	position: relative;
-	bottom: 0;
-	color: rgb(212, 212, 212);
+footer {
+	position: absolute;
+	/* height: 6em; */
+	color: rgb(187, 187, 187);
+	bottom: 0px;
+	left: 39%;
+	font-size: 0.9rem;
 }
 
 .home {
 	text-align: center;
 }
+
 .home p {
 	padding: 6%;
 }
@@ -45,7 +49,7 @@ footer p {
 h1 {
 	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.4), -1px -2px 0 rgba(255, 255, 255, 1);
 	text-align: center;
-	padding: 5% 5% 1% 5%;
+	padding: 7% 5% 1% 5%;
 	font-weight: bolder;
 	font-size: 2.6rem;
 	color: #55b2ff;
@@ -77,10 +81,7 @@ article {
 }
 
 .description {
-	text-align: center;
-}
-
-.description {
+	margin-top: 2%;
 	text-align: center;
 }
 
@@ -89,10 +90,30 @@ article {
 	margin: auto;
 }
 
+.wallTextarea {
+	margin: auto;
+	width: 400px;
+	text-align: center;
+	background-color: #d8d8d8;
+	color: #000000;
+	border: none;
+	border-radius: 5px;
+}
+
+/* (style="height: 50px; color: red; background: white") */
+/* #msgg {
+	background: white;
+} */
+
+.card {
+	color: white;
+	margin: 2%;
+}
+
 .description span input,
 .description span textarea {
 	height: 35px;
-	width: 240px;
+	width: 300px;
 	text-align: center;
 	background-color: #d8d8d8;
 	color: #5a5a5a;
@@ -103,7 +124,7 @@ article {
 .description span input:disabled,
 .description span textarea:disabled {
 	text-align: center;
-	background-color: #80808082;
+	background-color: #808080d3;
 	color: #9c9c9c;
 	border: 1px solid;
 	border-radius: 5px;
@@ -111,7 +132,7 @@ article {
 
 .description span textarea:disabled {
 	height: 100px;
-	width: 240px;
+	width: 300px;
 	text-align: center;
 	background-color: #80808082;
 	color: #9c9c9c;
@@ -189,7 +210,30 @@ nav form button {
 	text-align: center;
 	font-weight: bolder;
 	margin-top: -40px;
-	width: 10rem;
+}
+
+.sub {
+	width: 10.5rem;
+}
+
+.log {
+	width: 8rem;
+}
+
+.deco {
+	width: 10.2rem;
+}
+
+.me {
+	width: 6rem;
+}
+
+.wall {
+	width: 5rem;
+}
+
+.about {
+	width: 8rem;
 }
 
 .navbar-brand {
@@ -356,6 +400,7 @@ input[type="radio"]:checked:after {
 	width: 64px;
 	height: 40px;
 }
+
 .lds-ellipsis div {
 	position: absolute;
 	top: 50%;
@@ -365,45 +410,56 @@ input[type="radio"]:checked:after {
 	background: rgb(50, 112, 192);
 	animation-timing-function: cubic-bezier(0, 1, 1, 0);
 }
+
 .lds-ellipsis div:nth-child(1) {
 	left: 6px;
 	animation: lds-ellipsis1 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(2) {
 	left: 6px;
 	animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(3) {
 	left: 26px;
 	animation: lds-ellipsis2 0.6s infinite;
 }
+
 .lds-ellipsis div:nth-child(4) {
 	left: 45px;
 	animation: lds-ellipsis3 0.6s infinite;
 }
+
 @keyframes lds-ellipsis1 {
 	0% {
 		transform: scale(0);
 	}
+
 	100% {
 		transform: scale(1);
 	}
 }
+
 @keyframes lds-ellipsis3 {
 	0% {
 		transform: scale(1);
 	}
+
 	100% {
 		transform: scale(0);
 	}
 }
+
 @keyframes lds-ellipsis2 {
 	0% {
 		transform: translate(0, 0);
 	}
+
 	100% {
 		transform: translate(19px, 0);
 	}
 }
+
 /* ------------- */
 /* ------------- */

@@ -1,7 +1,7 @@
 extends layout
 
 block content  
-	.container
+	.container-fluid
 		article.profil
 			h1 Profil
 			form.description(action="/profil", method="post")
@@ -71,10 +71,23 @@ block content
 						textarea#inputPresentation(name="", cols="30", rows="30" value=user.presentation disabled)
 						i
 							//- a#editPresentation(href="#")  Modifier   
-				button.btn.btn#modifySave(type='submit') Save
+				button.load.btn.btn#modifySave(type='submit') 
+					span Save
+					.lds-ellipsis
+						div
+						div
+						div
+						div
 	script.
 		window.addEventListener('DOMContentLoaded', function() {
 			console.log('ready');
+			$('.lds-ellipsis').hide();
+			$('.disableLoad').submit(function () {
+				console.log('test');
+				$('button span').html('');
+				$('.load').prop('disabled', true);
+				$('.lds-ellipsis').show();
+			})
 			$("#modifySave").click(function() {
 				if ($("#inputPseudo").prop("disabled")) {
 					$("#inputPseudo").prop("disabled", false);

@@ -81,9 +81,17 @@ app.get("/logout", function (req, res) {
 
 app.get("/profil", function (req, res) {
 	let user = req.session.user;
-	console.log("mdr");
-	console.log(req.session);
+	// console.log(req.session);
 	res.render("profil", {
+		titre: "BigPixel",
+		user: user
+	});
+});
+
+app.get("/mur", function (req, res) {
+	let user = req.session.user;
+	console.log(user);
+	res.render("mur", {
 		titre: "BigPixel",
 		user: user
 	});

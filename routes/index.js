@@ -38,6 +38,7 @@ router.get('/', function (req, res, next) {
       },
     }, function (err, result) {
       if (result) {
+        console.log("result --->", result)
         console.log("Le pseudo et/ou le mot de passe est déja pris")
         res.render('signUp', {
           error: true,

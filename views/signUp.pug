@@ -9,7 +9,7 @@ block content
 		.fond
 		.container
 			if(error) 
-				h2.errorMsg = message
+				h2.errorMsg= message
 			.form-row.align-items-center.margin
 				-//############   GENRE   ############ 
 				.form-check.col-md-2.formCheckBoxs
@@ -70,7 +70,7 @@ block content
 			.form-row.align-items-center
 				label(for='presentation') Présentation
 				textarea.form-control( name="presentation")
-			button.load.btn.btn(type='submit') 
+			button.load.btn(type='submit') 
 				span Envoyer
 				.lds-ellipsis
 					div
