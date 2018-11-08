@@ -24,7 +24,7 @@ footer {
 	position: absolute;
 	/* height: 6em; */
 	color: rgb(187, 187, 187);
-	bottom: 0px;
+	bottom: 0%;
 	left: 39%;
 	font-size: 0.9rem;
 }
@@ -49,7 +49,7 @@ footer {
 h1 {
 	text-shadow: 1px 2px 0 rgba(0, 0, 0, 0.4), -1px -2px 0 rgba(255, 255, 255, 1);
 	text-align: center;
-	padding: 7% 5% 1% 5%;
+	padding: 6% 0% 2%;
 	font-weight: bolder;
 	font-size: 2.6rem;
 	color: #55b2ff;
@@ -124,7 +124,7 @@ article {
 .description span input:disabled,
 .description span textarea:disabled {
 	text-align: center;
-	background-color: #808080d3;
+	background-color: #6e6e6eda;
 	color: #9c9c9c;
 	border: 1px solid;
 	border-radius: 5px;
@@ -134,7 +134,7 @@ article {
 	height: 100px;
 	width: 300px;
 	text-align: center;
-	background-color: #80808082;
+	background-color: #6e6e6ed3;
 	color: #9c9c9c;
 	border-radius: 5px;
 }
@@ -194,8 +194,9 @@ nav form .search {
 	height: 1.3rem;
 }
 
-nav form button:hover {
-	background-color: rgba(255, 255, 255, 0.418);
+.searchBtn:hover {
+	background-color: rgba(255, 255, 255, 0.452);
+
 }
 
 nav form button {
@@ -213,11 +214,11 @@ nav form button {
 }
 
 .sub {
-	width: 10.5rem;
+	width: 9rem;
 }
 
 .log {
-	width: 8rem;
+	width: 8.5rem;
 }
 
 .deco {
@@ -232,7 +233,7 @@ nav form button {
 	width: 5rem;
 }
 
-.about {
+.info {
 	width: 8rem;
 }
 
@@ -330,9 +331,8 @@ article button,
 	box-shadow: 0 0 0 0 black;
 }
 
-article button:hover,
-.subscribe button:hover,
-.signIn button:hover {
+
+button:hover:not(:disabled, nav) {
 	background: linear-gradient(180deg, #e4e3e3, #8d8d8d);
 	box-shadow: 0 0 0 0 black;
 }

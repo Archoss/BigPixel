@@ -6,15 +6,15 @@ block content
          h1 Mur
          form.description(method='POST' action="/mur")
             .form-row.align-items-center
-               textarea.form-control.wallTextarea#textinput(name="wallTextarea", user=user.pseudo placeholder="Exprimez-vous sur votre mur", rows="2")
-               button.load.btn(disabled)
+               textarea.form-control.wallTextarea#textinput(name="msg", user=user.pseudo placeholder="Exprimez-vous sur votre mur", rows="2")
+               button.load.btn(disabled, type='submit')
                   span Envoyer
                   .lds-ellipsis
                      div
                      div
                      div
                      div
-      #papa
+         p= msg
 
          script.
             $('document').ready(function() {
@@ -33,29 +33,29 @@ block content
                   for (var i = 0; i < 6; i++) {
                      color += letters[Math.floor(Math.random() * 16)];
                   }
-                  return color + 'd3';
+                  return color + 'da';
                }
-               $('.btn').click(function(e) {
-                  let saisieTextarea = $('#textinput').val();
-                  e.preventDefault()
-                  //- console.log(user)
-                  const message = `
-                     <div class="card">
-                        <div class="card-header">
-                           ${$('#textinput').attr('user')} 
-                        </div>
-                        <div class="card-body">
-                           <blockquote class="blockquote mb-0">
-                              <p>${saisieTextarea}</p>
-                              <footer class="blockquote-footer"></footer>
-                           </blockquote>
-                        </div>
-                     </div>`                  
-                  $('#papa').prepend(message)
-                  $(".card:first").css("background-color", getRandomColor());
-                  $("#textinput").val("");
-                  $(".btn").attr('disabled', true)
-               })
+               //- $('.btn').click(function(e) {
+               //-    let saisieTextarea = $('#textinput').val();
+               //-    //- e.preventDefault()
+               //-    //- console.log(user)
+               //-    const message = `
+               //-       <div class="card">
+               //-          <div class="card-header">
+               //-             ${$('#textinput').attr('user')} 
+               //-          </div>
+               //-          <div class="card-body">
+               //-             <blockquote class="blockquote mb-0">
+               //-                <p>${saisieTextarea}</p>
+               //-                <footer class="blockquote-footer"></footer>
+               //-             </blockquote>
+               //-          </div>
+               //-       </div>`                  
+               //-    $('#papa').prepend(message)
+               //-    $(".card:first").css("background-color", getRandomColor());
+               //-    //- $("#textinput").val("");
+               //-    //- $(".btn").attr('disabled', true)
+               //- })
 
                $('.lds-ellipsis').hide();
                $('.disableLoad').submit(function () {

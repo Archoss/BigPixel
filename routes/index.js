@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
-let shortId = require('short-id')
+const uuidv4 = require('uuid/v4');
+// let shortId = require('short-id')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
     console.log(req.session.user);
-
     res.render('accueil', {
       title: 'BigPixel',
       user: req.session.user || null
@@ -14,6 +14,7 @@ router.get('/', function (req, res, next) {
   .post('/signUp', function (req, res, next) {
     // console.log(req.body)
     let user = {
+      id: uuidv4(),
       pseudo: req.body.pseudo.trim(),
       email: req.body.email,
       password: req.body.password,
@@ -86,6 +87,24 @@ router.get('/', function (req, res, next) {
         // });
       }
     })
+  })
+  .post('/mur', function (req, res, next) {
+    console.log("***********")
+    console.log(req.body.msg)
+    let message = {
+      msg: req.body.msg.trim()
+    }
+    // /---/  MONGO  /---/ //
+    req.db.collection('messages').insertOne(
+      message,
+      err => {
+        if (err) {
+          throw err;
+        } else {
+          req.session.message = message;
+        }
+      })
+    console.log("message stocké !")
   })
   .post('/profil', function (req, res) {
     let user = {

@@ -8,6 +8,7 @@ const server = require("http").Server(app);
 const expressMongoDb = require("express-mongo-db");
 const MongoStore = require("connect-mongo")(session);
 const bcrypt = require("bcryptjs");
+const uuidv4 = require('uuid/v4');
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -81,7 +82,7 @@ app.get("/logout", function (req, res) {
 
 app.get("/profil", function (req, res) {
 	let user = req.session.user;
-	// console.log(req.session);
+	console.log("profil - req.session -->", req.session);
 	res.render("profil", {
 		titre: "BigPixel",
 		user: user
@@ -89,12 +90,19 @@ app.get("/profil", function (req, res) {
 });
 
 app.get("/mur", function (req, res) {
-	let user = req.session.user;
-	console.log(user);
-	res.render("mur", {
-		titre: "BigPixel",
-		user: user
-	});
+	const user = req.session.user;
+	const msg = req.session.msg;
+
+	req.db.collection('messages').find().toArray((err, msg) => {
+		console.log(msg)
+		res.render("mur", {
+			titre: "BigPixel",
+			user: user,
+			msg: msg
+		});
+	})
+	console.log(req.session)
+	console.log(uuidv4());
 });
 
 app.get("/404", function (req, res, next) {
