@@ -105,9 +105,25 @@ article {
 	background: white;
 } */
 
+.card-header {
+	text-transform: capitalize;
+	background-color: #414141cc;
+	color: rgb(255, 255, 255);
+}
+
+.card-body blockquote {
+	text-align: center;
+
+}
+
 .card {
-	color: white;
+	background-color: #535252c2;
 	margin: 2%;
+}
+
+.card-body blockquote footer {
+	text-align: right;
+	color: rgb(196, 196, 196);
 }
 
 .description span input,

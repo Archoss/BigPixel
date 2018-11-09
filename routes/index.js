@@ -93,6 +93,7 @@ router.get('/', function (req, res, next) {
     console.log(req.body.msg)
     let message = {
       msg: req.body.msg.trim()
+
     }
     // /---/  MONGO  /---/ //
     req.db.collection('messages').insertOne(

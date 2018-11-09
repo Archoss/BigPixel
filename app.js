@@ -1,14 +1,14 @@
 "use strict";
-const express = require("express");
-const session = require("express-session");
-const app = express();
-const path = require("path");
-const bodyParser = require("body-parser");
-const server = require("http").Server(app);
-const expressMongoDb = require("express-mongo-db");
-const MongoStore = require("connect-mongo")(session);
-const bcrypt = require("bcryptjs");
-const uuidv4 = require('uuid/v4');
+const express = require("express"),
+	app = express(),
+	session = require("express-session"),
+	path = require("path"),
+	bodyParser = require("body-parser"),
+	server = require("http").Server(app),
+	expressMongoDb = require("express-mongo-db"),
+	MongoStore = require("connect-mongo")(session),
+	bcrypt = require("bcryptjs"),
+	uuidv4 = require('uuid/v4');
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -92,16 +92,31 @@ app.get("/profil", function (req, res) {
 app.get("/mur", function (req, res) {
 	const user = req.session.user;
 	const msg = req.session.msg;
-
 	req.db.collection('messages').find().toArray((err, msg) => {
-		console.log(msg)
+		// console.log(msg)
 		res.render("mur", {
 			titre: "BigPixel",
 			user: user,
-			msg: msg
+			msg: msg,
+			moment: function () {
+				var dateNow = new Date();
+				var dd = dateNow.getDate();
+				var monthSingleDigit = dateNow.getMonth() + 1,
+					mm = monthSingleDigit < 10 ? '0' + monthSingleDigit : monthSingleDigit;
+				var yy = dateNow.getFullYear().toString().substr(2);
+				return (mm + '/' + dd + '/' + yy);
+			}
 		});
+	}, function (err, msg) {
+		console.log(msg)
+		if (msg) {
+			res.json('Data found');
+		} else {
+			res.json('Erreur')
+		}
 	})
 	console.log(req.session)
+	console.log("req.session.user", user.pseudo)
 	console.log(uuidv4());
 });
 

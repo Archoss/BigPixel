@@ -6,7 +6,7 @@ block content
          h1 Mur
          form.description(method='POST' action="/mur")
             .form-row.align-items-center
-               textarea.form-control.wallTextarea#textinput(name="msg", user=user.pseudo placeholder="Exprimez-vous sur votre mur", rows="2")
+               textarea.form-control.wallTextarea#textinput(name="msg", msg=msg, user=user.pseudo placeholder="Exprimez-vous sur votre mur", rows="2")
                button.load.btn(disabled, type='submit')
                   span Envoyer
                   .lds-ellipsis
@@ -14,11 +14,27 @@ block content
                      div
                      div
                      div
-         p= msg
+                     
+         each m in msg
+            .card
+               .card-header
+                  span= user.pseudo
+                  | 
+                  span #{moment()}
+               .card-body
+                  blockquote.blockquote.mb-0
+                     p= m.msg
+                     footer.blockquote-footer ...
 
          script.
             $('document').ready(function() {
                // -- //
+               $('.lds-ellipsis').hide();
+               $('.disableLoad').submit(function () {
+                  $('button span').html('');
+                  $('.load').prop('disabled', true);
+                  $('.lds-ellipsis').show();
+               })
                $("#textinput").keyup(function(){
                   if($("#textinput").val() !== "") {
                      $(".btn").attr('disabled', false)
@@ -35,10 +51,47 @@ block content
                   }
                   return color + 'da';
                }
+               $(".btn").click(function() {
+                  $.ajax({
+                        url: "/app",
+                        method: 'get',
+                        dataType: 'json',
+                        data: {
+                           messageTextarea: $("#textinput").val()
+                        }
+                  }).done(function(data) {
+                     if(data === "Data found") {
+                        console.log(data);
+                        let saisieTextarea = $('#textinput').val();
+                        //- e.preventDefault()
+                        //- console.log(user)
+                        const message = `
+                           <div class="card">
+                              <div class="card-header">
+                                 ${user.pseudo} 
+                              </div>
+                              <div class="card-body">
+                                 <blockquote class="blockquote mb-0">
+                                    <p>${msg}</p>
+                                    <footer class="blockquote-footer"></footer>
+                                 </blockquote>
+                              </div>
+                           </div>`                  
+                        $('#papa').prepend(message)
+                        $(".card:first").css("background-color", getRandomColor());
+                        //- $("#textinput").val("");
+                        //- $(".btn").attr('disabled', true)
+                     }else{
+                        console.log("Pas de data");
+                        $("#enterprise").removeClass('invalid');
+                        $("#btnSubmit").removeClass('disabled');
+                     }
+                  })
+               })
                //- $('.btn').click(function(e) {
                //-    let saisieTextarea = $('#textinput').val();
-               //-    //- e.preventDefault()
-               //-    //- console.log(user)
+               //-    e.preventDefault()
+               //-    console.log(user)
                //-    const message = `
                //-       <div class="card">
                //-          <div class="card-header">
@@ -53,14 +106,7 @@ block content
                //-       </div>`                  
                //-    $('#papa').prepend(message)
                //-    $(".card:first").css("background-color", getRandomColor());
-               //-    //- $("#textinput").val("");
-               //-    //- $(".btn").attr('disabled', true)
+               //-    $("#textinput").val("");
+               //-    $(".btn").attr('disabled', true)
                //- })
-
-               $('.lds-ellipsis').hide();
-               $('.disableLoad').submit(function () {
-                  $('button span').html('');
-                  $('.load').prop('disabled', true);
-                  $('.lds-ellipsis').show();
-               })
             })
