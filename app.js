@@ -7,7 +7,6 @@ const express = require("express"),
 	server = require("http").Server(app),
 	expressMongoDb = require("express-mongo-db"),
 	MongoStore = require("connect-mongo")(session),
-	bcrypt = require("bcryptjs"),
 	uuidv4 = require('uuid/v4');
 
 var indexRouter = require("./routes/index");
@@ -26,6 +25,9 @@ app.use(
 		extended: false
 	})
 );
+server.listen(process.env.PORT || 3000, function () {
+	console.log("Serveur connecté sur le port 3000");
+});
 app.use(bodyParser.json());
 
 app.use("/static", express.static(path.join(__dirname, "public")));
@@ -125,10 +127,6 @@ app.get("/404", function (req, res, next) {
 	res.status(404);
 	// respond with pug page
 	res.render("404");
-});
-
-server.listen(3000, function () {
-	console.log("Serveur connecté sur le port 3000");
 });
 
 module.exports = app;
