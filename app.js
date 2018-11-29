@@ -19,7 +19,8 @@ app.set("view engine", "pug");
 app.set("trust proxy", 1); // trust first proxy
 app.locals.pretty = true;
 
-app.use(expressMongoDb("mongodb://127.0.0.1:27017/bigPixel_db"));
+app.use(expressMongoDb("mongodb://pierre:bonde007pierre@ds211774.mlab.com:11774/bigpixel"));
+// app.use(expressMongoDb("mongodb://127.0.0.1:27017/bigPixel_db"));
 app.use(
 	bodyParser.urlencoded({
 		extended: false
@@ -43,7 +44,7 @@ app.use(
 			secure: false
 		},
 		store: new MongoStore({
-			url: "mongodb://localhost:27017/bigPixel",
+			url: "mongodb://pierre:bonde007pierre@ds211774.mlab.com:11774/bigpixel",
 			ttl: 30 * 60
 		})
 	})

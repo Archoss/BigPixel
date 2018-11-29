@@ -4,9 +4,10 @@
 extends layout
 
 block content
-	.container
-		article
-			img(src="static/images/Erreur-404.png", alt="")
+	.container-fluid
+		article.page404
+			//- img(src="static/images/Erreur-404.png", alt="")
+			h1 Erreur 404
 
 	script.
 		document.addEventListener("DOMContentLoaded", function(e) {
