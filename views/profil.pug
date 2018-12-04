@@ -68,9 +68,8 @@ block content
 				p 
 					span Présentation : 
 					span
-						textarea#inputPresentation(cols="30", rows="30" value=user.presentation disabled)
-						//- i
-							//- a#editPresentation(href="#")  Modifier   
+						textarea#inputPresentation(cols="40" rows="40" disabled)
+							| #{user.presentation}
 				button.load.btn.btn#modifySave(type='submit') 
 					span Save
 					.lds-ellipsis

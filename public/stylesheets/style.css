@@ -29,8 +29,8 @@ footer {
 	/* left: 39%; */
 	font-size: 0.7rem;
 }
-tr:nth-child(even) {background: #CCCCCCc2}
-tr:nth-child(odd) {background: #ffffffc2}
+tr:nth-child(even) {background: #ccccccce}
+tr:nth-child(odd) {background: #ffffffce}
 table{
 	font-weight: bold;
 	border: #ffffff 3px solid;
@@ -44,12 +44,12 @@ table{
 }
 tr:nth-child(odd):not(:hover){
 	color: rgb(0, 0, 0);
-	background: #ffffffc2;
+	background: #ffffffce;
 	transition: 0.25s all;
 }
 tr:nth-child(even):not(:hover){
 	color: rgb(0, 0, 0);
-	background: #CCCCCCc2;
+	background: #CCCCCCce;
 	transition: 0.25s all;
 }
 table .field{
@@ -170,21 +170,30 @@ article {
 	border-radius: 5px;
 }
 
-.description span input:disabled,
-.description span textarea:disabled {
+.description span input:disabled{
 	text-align: center;
 	background-color: #6e6e6eda;
 	color: #9c9c9c;
-	border: 1px solid;
 	border-radius: 5px;
+	border: 1px solid;
 }
 
+.description span textarea {
+	height: 120px;
+	width: 300px;
+	text-align: center;
+	background-color: #d8d8d8;
+	color: #5a5a5a;
+	border: none;
+	border-radius: 5px;
+}
 .description span textarea:disabled {
-	height: 100px;
+	height: 120px;
 	width: 300px;
 	text-align: center;
 	background-color: #6e6e6ed3;
 	color: #9c9c9c;
+	border: 1px solid;
 	border-radius: 5px;
 }
 
