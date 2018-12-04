@@ -31,7 +31,8 @@ footer {
 }
 tr:nth-child(even) {background: #CCCCCCc2}
 tr:nth-child(odd) {background: #ffffffc2}
-table tr{
+table{
+	width: 200px;
 	font-weight: bold;
 }
 .table-hover tbody tr:hover{
@@ -41,6 +42,7 @@ table tr{
 }
 tr{
 	border: white 2px solid;
+	padding: 3px;
 }
 .home {
 	text-align: center;
