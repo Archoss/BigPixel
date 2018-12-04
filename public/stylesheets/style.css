@@ -29,7 +29,19 @@ footer {
 	/* left: 39%; */
 	font-size: 0.7rem;
 }
-
+tr:nth-child(even) {background: #CCCCCCc2}
+tr:nth-child(odd) {background: #ffffffc2}
+table tr{
+	font-weight: bold;
+}
+.table-hover tbody tr:hover{
+	color: rgb(253, 253, 253);
+	background-color: rgba(133, 133, 133, 0.822);
+	transition: 0.5s all;
+}
+tr{
+	border: white 2px solid;
+}
 .home {
 	text-align: center;
 	margin-bottom: 470px;
@@ -41,8 +53,9 @@ footer {
 	margin-bottom: 740px;
 }
 
-.about {
-	color: white;
+.about, .listUsers {
+	padding: 5%;
+    color: white;
 }
 
 /* 

@@ -1,0 +1,37 @@
+extends layout
+
+block content  
+        .container-fluid
+            article.listUsers
+                each u in userInfo
+                    table.table.table-sm.table-hover
+                        tr
+                            td Pseudo :
+                            td #{u.pseudo}
+                        tr
+                            td Email :
+                            td #{u.email}
+                        tr
+                            td Lastname :
+                            td #{u.lastname}
+                        tr
+                            td Firstname :
+                            td #{u.firstname}
+                        tr
+                            td Age :
+                            td #{u.age}
+                        tr
+                            td Adress :
+                            td #{u.adress}
+                        tr
+                            td City :
+                            td #{u.city}
+                        tr
+                            td Movie :
+                            td #{u.movie}
+                        tr
+                            td Game :
+                            td #{u.game}
+                        tr
+                            td Presentation :
+                            td #{u.presentation}

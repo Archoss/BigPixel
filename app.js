@@ -18,8 +18,8 @@ app.set("view engine", "pug");
 app.set("trust proxy", 1); // trust first proxy
 app.locals.pretty = true;
 
-app.use(expressMongoDb("mongodb://pierre:bonde007pierre@ds211774.mlab.com:11774/bigpixel"));
 // app.use(expressMongoDb("mongodb://127.0.0.1:27017/bigPixel_db"));
+app.use(expressMongoDb("mongodb://pierre:bonde007pierre@ds211774.mlab.com:11774/bigpixel"));
 app.use(
 	bodyParser.urlencoded({
 		extended: false
@@ -90,6 +90,31 @@ app.get("/profil", function (req, res) {
 		titre: "BigPixel",
 		user: user
 	});
+});
+app.get("/listUsers", function (req, res) {
+	const user = req.session.user;
+	const pseudo = req.session.userInfo;
+	req.db.collection('utilisateurs').find().toArray((err, userInfo) => {
+		console.log("CURSOR ---> ", userInfo)
+		console.log("pseudos ", userInfo[0].pseudo)
+		console.log('------ BOUCLE ------ ')
+		// for (let index = 0; index < userInfo.length; index++) {
+		// 	console.log('propriete pseudo de l\'index --> ', userInfo[index].pseudo)
+		// 	// const element = array[index];
+		// }
+		res.render("listeInscrits", {
+			titre: "BigPixel",
+			user: user,
+			userInfo: userInfo
+		});
+	}, function (err, userInfo) {
+		console.log(userInfo)
+		if (userInfo) {
+			res.json('Data found');
+		} else {
+			res.json('Erreur')
+		}
+	})
 });
 
 app.get("/mur", function (req, res) {
