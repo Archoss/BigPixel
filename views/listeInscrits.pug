@@ -3,35 +3,36 @@ extends layout
 block content  
         .container
             article.listUsers
-                each u in userInfo
-                    table.table.table-sm.table-hover
-                        tr
-                            td Pseudo :
-                            td #{u.pseudo}
-                        tr
-                            td Email :
-                            td #{u.email}
-                        tr
-                            td Lastname :
-                            td #{u.lastname}
-                        tr
-                            td Firstname :
-                            td #{u.firstname}
-                        tr
-                            td Age :
-                            td #{u.age}
-                        tr
-                            td Adress :
-                            td #{u.adress}
-                        tr
-                            td City :
-                            td #{u.city}
-                        tr
-                            td Movie :
-                            td #{u.movie}
-                        tr
-                            td Game :
-                            td #{u.game}
-                        tr
-                            td Presentation :
-                            td #{u.presentation}
+            h1 Liste des utilisateurs inscrits
+            each u in userInfo
+                table.table.table-sm.table-hover
+                    tr
+                        td.field Pseudo :
+                        td.value #{u.pseudo}
+                    tr
+                        td.field Email :
+                        td.value #{u.email}
+                    tr
+                        td.field Lastname :
+                        td.value #{u.lastname}
+                    tr
+                        td.field Firstname :
+                        td.value #{u.firstname}
+                    tr
+                        td.field Age :
+                        td.value #{u.age}
+                    tr
+                        td.field Adress :
+                        td.value #{u.adress}
+                    tr
+                        td.field City :
+                        td.value #{u.city}
+                    tr
+                        td.field Movie :
+                        td.value #{u.movie}
+                    tr
+                        td.field Game :
+                        td.value #{u.game}
+                    tr
+                        td.field Presentation :
+                        td.value #{u.presentation}
