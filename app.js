@@ -97,11 +97,6 @@ app.get("/listUsers", function (req, res) {
 	req.db.collection('utilisateurs').find().toArray((err, userInfo) => {
 		console.log("CURSOR ---> ", userInfo)
 		console.log("pseudos ", userInfo[0].pseudo)
-		console.log('------ BOUCLE ------ ')
-		// for (let index = 0; index < userInfo.length; index++) {
-		// 	console.log('propriete pseudo de l\'index --> ', userInfo[index].pseudo)
-		// 	// const element = array[index];
-		// }
 		res.render("listeInscrits", {
 			titre: "BigPixel",
 			user: user,

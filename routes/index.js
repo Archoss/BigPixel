@@ -5,12 +5,12 @@ const uuidv4 = require('uuid/v4');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    console.log(req.session.user);
-    res.render('accueil', {
-      title: 'BigPixel',
-      user: req.session.user || null
-    });
-  })
+  console.log(req.session.user);
+  res.render('accueil', {
+    title: 'BigPixel',
+    user: req.session.user || null
+  });
+})
   .post('/signUp', function (req, res, next) {
     // console.log(req.body)
     let user = {
@@ -122,18 +122,18 @@ router.get('/', function (req, res, next) {
       presentation: req.body.presentation,
     }
     req.db.collection('utilisateurs').updateOne({
-        pseudo: user.pseudo,
-        email: user.email,
-        password: user.password,
-        lastname: user.lastname,
-        firstname: user.firstname,
-        age: user.age,
-        adress: user.adress,
-        city: user.city,
-        movie: user.movie,
-        game: user.game,
-        presentation: user.presentation
-      },
+      pseudo: user.pseudo,
+      email: user.email,
+      password: user.password,
+      lastname: user.lastname,
+      firstname: user.firstname,
+      age: user.age,
+      adress: user.adress,
+      city: user.city,
+      movie: user.movie,
+      game: user.game,
+      presentation: user.presentation
+    },
       user, err => {
         if (err) {
           throw err;
